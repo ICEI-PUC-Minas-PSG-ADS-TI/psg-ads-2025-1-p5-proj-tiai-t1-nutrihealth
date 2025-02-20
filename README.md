@@ -1,25 +1,27 @@
 # TÍTULO DO PROJETO
 
-`CURSO`
+`CURSO` Análise e Desenvolvimento de Sitemas
 
-`DISCIPLINA`
+`DISCIPLINA` Trabalho Insterdisciplinar Aplicações Inovadores
 
-`SEMESTRE`
+`SEMESTRE` Quinto Semestre
 
 Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Este software ajuda as pessoas a montar refeições saudáveis, considerando o impacto ambiental dos alimentos. Por exemplo, prioriza o uso de vegetais locais em vez de produtos importados e oferece receitas que evitam desperdício, como aproveitar cascas e talos.
 
 ODS Alinhados:
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Guilherme Henrique Braga e Silva
+* Yago Henrique Martins Apolinários
+* Luan Pablo Mendes Amaral
+* Gabriel Chaves Pinheiro
+* Vitor Emanuel Dias Xavier
 
 ## Orientador
 
-* Nome completo do professor 1
+* Juliana Padilha
 
 ## Instruções de utilização
 
