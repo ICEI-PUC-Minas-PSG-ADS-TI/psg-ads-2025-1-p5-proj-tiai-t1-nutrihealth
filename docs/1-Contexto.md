@@ -2,7 +2,7 @@
 
 Muitas pessoas querem comer de forma saudável e sustentável, mas encontram desafios no dia a dia: falta de tempo para planejar refeições equilibradas, dificuldade em escolher alimentos com menor impacto ambiental e o desperdício de ingredientes que acabam esquecidos na geladeira.  
 
-Nosso software vem para facilitar essa jornada! Ele sugere receitas com base nos ingredientes que você já tem em casa, prioriza alimentos com menor pegada ecológica e até monta listas de compras inteligentes com produtos da estação. Além disso, gera relatórios mostrando sua economia – tanto para o bolso quanto para o planeta!  
+Nosso software vem para facilitar essa jornada! Ele sugere receitas com base nos ingredientes que você já tem em casa, prioriza alimentos com menor pegada ecológica e até monta listas de compras inteligentes com produtos da estação.
 
 Seja para famílias, indivíduos ou nutricionistas, essa ferramenta simplifica a escolha de refeições saudáveis e sustentáveis, ajudando a tornar o consumo mais responsável e consciente.  
 
