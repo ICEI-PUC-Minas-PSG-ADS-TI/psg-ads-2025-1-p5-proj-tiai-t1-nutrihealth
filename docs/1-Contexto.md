@@ -1,46 +1,57 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Muitas pessoas querem comer de forma saudável e sustentável, mas encontram desafios no dia a dia: falta de tempo para planejar refeições equilibradas, dificuldade em escolher alimentos com menor impacto ambiental e o desperdício de ingredientes que acabam esquecidos na geladeira.  
 
+Nosso software vem para facilitar essa jornada! Ele sugere receitas com base nos ingredientes que você já tem em casa, prioriza alimentos com menor pegada ecológica e até monta listas de compras inteligentes com produtos da estação. Além disso, gera relatórios mostrando sua economia – tanto para o bolso quanto para o planeta!  
+
+Seja para famílias, indivíduos ou nutricionistas, essa ferramenta simplifica a escolha de refeições saudáveis e sustentáveis, ajudando a tornar o consumo mais responsável e consciente.  
+
+---
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
+Vivemos um momento em que a alimentação saudável e sustentável é mais importante do que nunca. No entanto, muitas pessoas enfrentam dificuldades, como:  
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+- Falta de tempo para planejar refeições equilibradas.  
+- Dificuldade em identificar alimentos com menor impacto ambiental.  
+- Desperdício de comida por não saber como aproveitar melhor os ingredientes.  
+- Falta de informações acessíveis sobre escolhas alimentares sustentáveis.  
 
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Além disso, o setor alimentício tem um enorme impacto ambiental, com a emissão de gases de efeito estufa, consumo excessivo de recursos naturais e desperdício de alimentos. Precisamos repensar nossos hábitos para reduzir esse impacto e fazer escolhas mais conscientes.  
+
+Seja você alguém que quer comer melhor, um nutricionista que deseja incentivar práticas sustentáveis ou um estudante interessado no impacto da alimentação, é essencial contar com ferramentas que tornem essa mudança mais prática e acessível.  
+
+---
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+Nosso objetivo principal é criar um software que ajude na adoção de hábitos alimentares mais saudáveis e sustentáveis. Para isso, queremos:  
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+- **Sugerir receitas** com base nos ingredientes disponíveis, evitando desperdícios.  
+- **Indicar alimentos de menor pegada ambiental**, incentivando o consumo de produtos locais e sazonais.  
+- **Gerar listas de compras sustentáveis**, ajudando a escolher ingredientes ecológicos de forma prática.  
+- **Fornecer relatórios sobre economia financeira e impacto ambiental**, para incentivar mudanças de hábitos com base em dados reais.  
+- **Tornar a alimentação sustentável acessível** para todos – desde famílias até profissionais da nutrição.  
+
+---
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+O desperdício de alimentos e o impacto ambiental da produção alimentícia são problemas globais. Pequenas mudanças no nosso dia a dia fazem uma grande diferença, e a tecnologia pode ser uma aliada poderosa nesse processo.  
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
+Ao sugerir receitas com o que já temos em casa, reduzimos o desperdício. Ao priorizar alimentos locais e da estação, diminuímos a emissão de carbono. E com relatórios claros sobre economia e impacto ambiental, podemos tomar decisões mais conscientes e sustentáveis.  
 
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Nosso software não é apenas uma ferramenta, mas um passo rumo a um sistema alimentar mais equilibrado e responsável.  
+
+---
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
+Essa solução é para todos que querem melhorar sua alimentação e reduzir seu impacto no meio ambiente, incluindo:  
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual.
+- **Famílias e indivíduos** que querem evitar desperdícios, otimizar compras e comer melhor.  
+- **Nutricionistas e profissionais da saúde** que desejam auxiliar pacientes na adoção de hábitos sustentáveis.  
+- **Estudantes e pesquisadores** interessados no impacto ambiental da alimentação e no consumo consciente.  
+- **Pessoas com restrições alimentares** que buscam alternativas sustentáveis para dietas específicas, como vegetarianos e veganos.  
 
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+O software será desenvolvido com uma interface simples e intuitiva, garantindo que qualquer pessoa, independentemente do nível de familiaridade com tecnologia, possa aproveitar todos os benefícios dessa ferramenta.  
+
