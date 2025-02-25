@@ -28,8 +28,7 @@ Nosso objetivo principal é criar um software que ajude na adoção de hábitos 
 
 - **Sugerir receitas** com base nos ingredientes disponíveis, evitando desperdícios.  
 - **Indicar alimentos de menor pegada ambiental**, incentivando o consumo de produtos locais e sazonais.  
-- **Gerar listas de compras sustentáveis**, ajudando a escolher ingredientes ecológicos de forma prática.  
-- **Fornecer relatórios sobre economia financeira e impacto ambiental**, para incentivar mudanças de hábitos com base em dados reais.  
+- **Gerar listas de compras sustentáveis**, ajudando a escolher ingredientes ecológicos de forma prática.   
 - **Tornar a alimentação sustentável acessível** para todos – desde famílias até profissionais da nutrição.  
 
 ---
