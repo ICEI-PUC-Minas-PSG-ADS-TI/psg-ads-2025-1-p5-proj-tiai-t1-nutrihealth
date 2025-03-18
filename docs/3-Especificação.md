@@ -3,9 +3,7 @@
 
 <span style="color:red">Pré-requisitos: <a href="2-Planejamento-Projeto.md"> Planejamento do Projeto do Software (Cronograma) </a></span>
 
-> Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição das histórias de usuários, dos requisitos funcionais e não funcionais além das restrições do projeto.
-
-> Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
+Nesta parte, será apresentada a definição do problema e a solução do Nosso projeto quando se fala de usuarios. Serão utilizadas técnicas como modelagem de requisitos por meio de histórias de usuários e diagramas UML, além da identificação de critérios de desempenho, segurança e acessibilidade.  
 
 ## 3.1 Classificação dos Requisitos Funcionais x Requisitos não Funcionais 
 
