@@ -6,8 +6,7 @@
 
 `SEMESTRE` Quinto Semestre
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
-Este software ajuda as pessoas a montar refeições saudáveis, considerando o impacto ambiental dos alimentos. Por exemplo, prioriza o uso de vegetais locais em vez de produtos importados e oferece receitas que evitam desperdício, como aproveitar cascas e talos.
+Este software auxilia as pessoas a planejar refeições saudáveis e sustentáveis, levando em conta o impacto ambiental dos alimentos. Ele sugere receitas com base nos ingredientes disponíveis, incentivando o aproveitamento total dos alimentos e reduzindo o desperdício. Além disso, prioriza o consumo de produtos locais e da estação, ajudando os usuários a fazer escolhas mais ecológicas. Com uma interface intuitiva, a ferramenta atende desde famílias que querem otimizar suas compras até nutricionistas que desejam promover hábitos alimentares mais responsáveis.
 
 ODS Alinhados:
 
