@@ -4,8 +4,6 @@
 
 ## 2.1. Divisão de Papéis
 
-> Apresente a divisão de papéis entre os membros do grupo em cada sprint. O desejável é que, em cada sprint, o aluno assuma papéis diferentes na disciplina. Siga o modelo do exemplo abaixo:
-
 ### Sprint 1
 - _Scrum master_: Guilherme Henrique Braga e Silva
 - Protótipos: Gabriel Chaves Pinheiro, Luan Pablo Mendes Amaral
@@ -16,35 +14,34 @@
 - _Scrum master_:  Guilherme Henrique Braga e Silva
 - Desenvolvedor _front-end_: Gabriel Chaves Pinheiro, Luan Pablo Mendes Amaral
 - Desenvolvedor _back-end_: Yago Henrique Martins Apolinario
-- Testes: Emanuel Dias Xavier
+- Testes: Vitor Emanuel Dias Xavier
 
 ### Sprint 3
-- _Scrum master_: AlunaY
-- Desenvolvedor _front-end_: AlunoX
-- Desenvolvedor _back-end_: AlunoK
+- _Scrum master_: Guilherme Henrique Braga e Silva
+- Desenvolvedor _front-end_: Gabriel Chaves Pinheiro, Luan Pablo Mendes Amaral
+- Desenvolvedor _back-end_: Yago Henrique Martins Apolinario, Guilherme Henrique Braga e Silva
 - Testes: AlunaZ
 
 ### Sprint 4
-- _Scrum master_: AlunaY
-- Desenvolvedor _front-end_: AlunoX
-- Desenvolvedor _back-end_: AlunoK
-- Testes: AlunaZ
+- _Scrum master_: Guilherme Henrique Braga e Silva
+- Desenvolvedor _front-end_: Gabriel Chaves Pinheiro, Luan Pablo Mendes Amaral
+- Desenvolvedor _back-end_: Yago Henrique Martins Apolinario, Guilherme Henrique Braga e Silva
+- Testes: Vitor Emanuel Dias Xavier
 
   
 ## 2.2. Quadro de tarefas
 
-> Apresente a divisão de tarefas entre os membros do grupo e o acompanhamento da execução, conforme exemplo abaixo.
-
 ## Sprint 1
 
-Atualizado em: 25/04/2025
+Atualizado em: 18/03/2025
 
-| Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
-| :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| Guilherme       | Introdução | 25/02/2025     | 27/02/2025 | ✔️    | 25/02/2025      |
-| Guilherme        | Objetivos    |  25/02/2025    | 27/02/2025 | ✔️    |  25/02/2025                |
-| AlunoY        | Histórias de usuário  | 01/01/2025     | 20/03/2025 | 📝     |                 |
-| AlunoK        | Personas 1  |    01/01/2025        | 12/02/2005 | ❌    |       |
+| Responsável       | Tarefa/Requisito   | Iniciado em    | Prazo      | Status    | Terminado em |
+| :----             |    :----           |      :----:    | :----:     | :----:    | :----:       |
+| Guilherme Henrique| Contexto           | 13/02/2025     | 27/02/2025 | ✔️       | 27/02/2025    |
+| Gabriel Chaves    | Contexto           | 13/02/2025     | 27/02/2025 | ✔️       | 27/02/2025    |
+| Luan Pablo        | Contexto           | 13/02/2025     | 27/02/2025 | ✔️       | 27/02/2025    |
+| Yago Henrique     | Contexto           | 13/02/2025     | 27/02/2025 | ✔️       | 27/02/2025    |
+| Vitor Emanuel     | Contexto           | 13/02/2025     | 27/02/2025 | ✔️       | 27/02/2025    |
 
 Legenda:
 - ✔️: terminado
@@ -55,14 +52,16 @@ Legenda:
   
 ## Sprint 2
 
-Atualizado em: 21/04/2024
+Atualizado em: 18/03/2025
 
-| Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
-| :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| AlunaX        | Home-Page        | 01/02/2024     | 07/03/2024 | ✔️    | 05/01/2005      |
-| AlunaZ        | CSS Unificado    | 03/02/2024     | 10/03/2024 | 📝    |                 |
-| AlunoY        | Página de login  | 01/02/2024     | 07/03/2024 | ⌛     |                 |
-| AlunoK        | Script de login  |  01/01/2024    | 12/03/2024 | ❌    |       |
+
+| Responsável       | Tarefa/Requisito        | Iniciado em    | Prazo      | Status    | Terminado em |
+| :----             |    :----                |      :----:    | :----:     | :----:    | :----:       |
+| Guilherme Henrique| Planejamento de projeto | 06/03/2025     | 20/03/2025 | ✔️       | 18/03/2025    |
+| Gabriel Chaves    | Planejamento de projeto | 06/03/2025     | 20/03/2025 | ✔️       | 18/03/2025    |
+| Luan Pablo        | Especificação           | 06/03/2025     | 20/03/2025 | 📝       |               |
+| Yago Henrique     | Especificação           | 06/03/2025     | 20/03/2025 | 📝       |               |
+| Vitor Emanuel     | Especificação           | 06/03/2025     | 20/03/2025 | 📝       |               |
 
 Legenda:
 - ✔️: terminado
@@ -73,14 +72,15 @@ Legenda:
 
 ## Sprint 3
 
-Atualizado em: 21/04/2024
+Atualizado em: 18/03/2025
 
-| Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
-| :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| AlunaX        | Home-Page        | 01/02/2024     | 07/03/2024 | ✔️    | 05/01/2005      |
-| AlunaZ        | CSS Unificado    | 03/02/2024     | 10/03/2024 | 📝    |                 |
-| AlunoY        | Página de login  | 01/02/2024     | 07/03/2024 | ⌛     |                 |
-| AlunoK        | Script de login  |  01/01/2024    | 12/03/2024 | ❌    |       |
+| Responsável       | Tarefa/Requisito        | Iniciado em    | Prazo      | Status    | Terminado em |
+| :----             |    :----                |      :----:    | :----:     | :----:    | :----:       |
+| Guilherme Henrique|                         |                |            | ❌        |              |
+| Gabriel Chaves    |                         |                |            | ❌        |              |
+| Luan Pablo        |                         |                |            | ❌        |              |
+| Yago Henrique     |                         |                |            | ❌        |              |
+| Vitor Emanuel     |                         |                |            | ❌        |              |
 
 Legenda:
 - ✔️: terminado
@@ -90,14 +90,14 @@ Legenda:
 
 ## Sprint 4
 
-Atualizado em: 21/04/2024
-
-| Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
-| :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| AlunaX        | Home-Page        | 01/02/2024     | 07/03/2024 | ✔️    | 05/01/2005      |
-| AlunaZ        | CSS Unificado    | 03/02/2024     | 10/03/2024 | 📝    |                 |
-| AlunoY        | Página de login  | 01/02/2024     | 07/03/2024 | ⌛     |                 |
-| AlunoK        | Script de login  |  01/01/2024    | 12/03/2024 | ❌    |       |
+Atualizado em: 18/03/2025
+| Responsável       | Tarefa/Requisito        | Iniciado em    | Prazo      | Status    | Terminado em |
+| :----             |    :----                |      :----:    | :----:     | :----:    | :----:       |
+| Guilherme Henrique|                         |                |            | ❌        |              |
+| Gabriel Chaves    |                         |                |            | ❌        |              |
+| Luan Pablo        |                         |                |            | ❌        |              |
+| Yago Henrique     |                         |                |            | ❌        |              |
+| Vitor Emanuel     |                         |                |            | ❌        |              |
 
 Legenda:
 - ✔️: terminado
