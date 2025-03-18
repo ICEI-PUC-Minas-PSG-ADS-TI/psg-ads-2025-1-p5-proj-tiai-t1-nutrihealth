@@ -28,6 +28,12 @@
 - Desenvolvedor _back-end_: Yago Henrique Martins Apolinario, Guilherme Henrique Braga e Silva
 - Testes: Vitor Emanuel Dias Xavier
 
+### Sprint 5
+- _Scrum master_: Guilherme Henrique Braga e Silva
+- Desenvolvedor _front-end_: Gabriel Chaves Pinheiro, Luan Pablo Mendes Amaral
+- Desenvolvedor _back-end_: Yago Henrique Martins Apolinario, Guilherme Henrique Braga e Silva
+- Testes: Vitor Emanuel Dias Xavier
+
   
 ## 2.2. Quadro de tarefas
 
@@ -53,7 +59,6 @@ Legenda:
 ## Sprint 2
 
 Atualizado em: 18/03/2025
-
 
 | Responsável       | Tarefa/Requisito        | Iniciado em    | Prazo      | Status    | Terminado em |
 | :----             |    :----                |      :----:    | :----:     | :----:    | :----:       |
@@ -91,6 +96,25 @@ Legenda:
 ## Sprint 4
 
 Atualizado em: 18/03/2025
+
+| Responsável       | Tarefa/Requisito        | Iniciado em    | Prazo      | Status    | Terminado em |
+| :----             |    :----                |      :----:    | :----:     | :----:    | :----:       |
+| Guilherme Henrique|                         |                |            | ❌        |              |
+| Gabriel Chaves    |                         |                |            | ❌        |              |
+| Luan Pablo        |                         |                |            | ❌        |              |
+| Yago Henrique     |                         |                |            | ❌        |              |
+| Vitor Emanuel     |                         |                |            | ❌        |              |
+
+Legenda:
+- ✔️: terminado
+- 📝: em execução
+- ⌛: atrasado
+- ❌: não iniciado
+
+## Sprint 5
+
+Atualizado em: 18/03/2025
+
 | Responsável       | Tarefa/Requisito        | Iniciado em    | Prazo      | Status    | Terminado em |
 | :----             |    :----                |      :----:    | :----:     | :----:    | :----:       |
 | Guilherme Henrique|                         |                |            | ❌        |              |
