@@ -59,8 +59,10 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 |ID| Restrição                                               |
 |--|---------------------------------------------------------|
-|01| O software deve ser compatível com Windows e Linux.     |
-|02| O sistema deve ser desenvolvido utilizando Java e MySQL.|
+|01| O software deve ser compatível com Windows, LINUX E MACOS.     |
+|02| O sistema deve ser desenvolvido utilizando Python, PostgreSQL, html, css, js.|
+|03| O código-fonte deve ser versionado utilizando Git e hospedado em um repositório privado. |
+|04|	A interface deve ser responsiva e adaptável para dispositivos móveis e desktops.| 
 
 **Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.**
 
