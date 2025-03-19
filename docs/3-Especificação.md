@@ -25,18 +25,29 @@ Lembre-se de classificá-los de acordo com a prioridade: ALTA, MÉDIA ou BAIXA.
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito                  | Prioridade |
-|------|-----------------------------------------|------------|
-|RF-001| Permitir que o usuário cadastre tarefas |    ALTA    | 
-|RF-002| Emitir um relatório de tarefas no mês   |    MÉDIA   |
 
+| ID     | Descrição do Requisito                                                        | Prioridade |
+|--------|------------------------------------------------------------------------------|------------|
+| RF-001 | Permitir que o usuário cadastre tarefas relacionadas ao planejamento de refeições | ALTA       |  
+| RF-002 | Emitir um relatório de tarefas no mês, como consumo de alimentos e desperdício | ALTA      |  
+| RF-003 | Permitir que o usuário cadastre os ingredientes disponíveis em casa          | ALTA       |  
+| RF-004 | Sugerir receitas com base nos ingredientes cadastrados                        | ALTA       |  
+| RF-005 | Gerar uma lista de compras personalizada conforme as receitas escolhidas      | MÉDIA      |  
+| RF-006 | Indicar o impacto ambiental das receitas sugeridas                            | MÉDIA      |  
+| RF-007 | Oferecer filtros para preferências alimentares (vegetariano, vegano, etc.)   | MÉDIA      |  
+| RF-008 | Permitir que o usuário salve receitas                                        | BAIXA      |  
+| RF-009 | Oferecer um modo de planejamento semanal de refeições                        | MÉDIA      |  
+| RF-010 | Permitir compartilhamento de receitas                                       | BAIXA      |  
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito                                            |Prioridade |
-|-------|-------------------------------------------------------------------|-----------|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel |    MÉDIA  | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s             |    BAIXA  | 
+| ID      | Descrição do Requisito                                                       | Prioridade |
+|---------|-----------------------------------------------------------------------------|------------|
+| RNF-001 | O sistema deve ser responsivo para rodar em um dispositivo móvel            | MÉDIA      |
+| RNF-002 | Deve processar requisições do usuário em no máximo 3s                       | BAIXA      |
+| RNF-003 | A interface deve ser intuitiva                                              | ALTA      |
+| RNF-04 | Deve ser compatível com os principais navegadores                            | MÉDIA      |
+
 
 
 
