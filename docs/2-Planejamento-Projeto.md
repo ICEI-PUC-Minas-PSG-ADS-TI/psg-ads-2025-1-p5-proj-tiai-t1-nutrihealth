@@ -66,7 +66,7 @@ Atualizado em: 20/03/2025
 | Gabriel Chaves    | Planejamento e Quadro de tarefas | 06/03/2025     | 20/03/2025 | ✔️       | 18/03/2025    |
 | Luan Pablo        |  Histórias de Usuários           | 06/03/2025     | 20/03/2025 | ✔️       |  19/03/2025             |
 | Yago Henrique     | Descrição do Requisito            | 06/03/2025     | 20/03/2025 | ✔️       | 19/03/2025    |
-| Vitor Emanuel     | Especificação           | 06/03/2025     | 20/03/2025 | 📝       |               |
+| Vitor Emanuel     | tasks           | 06/03/2025     | 20/03/2025 | ✔️       |     20/03/2025          |
 
 Legenda:
 - ✔️: terminado
