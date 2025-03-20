@@ -28,13 +28,6 @@
 | RNF-003 | A interface deve ser intuitiva                                              | ALTA      |
 | RNF-04 | Deve ser compatível com os principais navegadores                            | MÉDIA      |
 
-
-
-
-### b) Modifique o Quadro abaixo e insira as Restrições para o seu projeto.
-
-O projeto está restrito pelos itens apresentados na tabela a seguir.
-
 ## Restrições
 
 |ID| Restrição                                               |
@@ -44,20 +37,9 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |03| O código-fonte deve ser versionado utilizando Git e hospedado em um repositório privado. |
 |04|	A interface deve ser responsiva e adaptável para dispositivos móveis e desktops.| 
 
-**Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.**
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
-
 
 
 ## 3.2 Histórias de Usuários
-> Apresente aqui as histórias de usuário que são RELEVANTES para o projeto de sua solução. É esperado que haja pelo menos 10 histórias de usuário, dependendo do projeto escolhido para desenvolver.
-
-**OBS:** Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-### a) Modifique o Quadro abaixo e insira as histórias de usuários para o seu projeto.
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
