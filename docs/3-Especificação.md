@@ -1,8 +1,6 @@
 
 # 3. Especificações do Projeto
 
-<span style="color:red">Pré-requisitos: <a href="2-Planejamento-Projeto.md"> Planejamento do Projeto do Software (Cronograma) </a></span>
-
 ## 3.1 Classificação dos Requisitos Funcionais x Requisitos não Funcionais 
 
 ### Requisitos Funcionais
