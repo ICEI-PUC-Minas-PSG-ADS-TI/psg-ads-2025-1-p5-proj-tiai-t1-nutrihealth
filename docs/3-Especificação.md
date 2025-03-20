@@ -43,6 +43,7 @@
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
+|Eu como administrador do sistema | Quero gerenciar as ações dos usuários| Para manter o sistema organizado e evitar ações indesejaveis pelos usuários|
 |Eu como usuário do sistema | Quero cadastrar tarefas relacionadas ao planejamento de refeições           | Para organizar melhor minha alimentação                |
 |Eu como usuário do sistema       | Quero visualizar meu relatório mensal                | Para acompanhar meus hábitos alimentares e melhorar meu planejamento |
 |Eu como usuário do sistema       | Quero cadastrar os ingredientes disponíveis em casa           | Para facilitar a organização da minha despensa e evitar compras desnecessárias               |
@@ -169,12 +170,3 @@
               Criar funcionalidade de compartilhamento: Implementar um botão que gera um link ou permite envio direto por redes sociais.
               Criar controle de permissões: Definir regras para quem pode visualizar e acessar receitas compartilhadas.
               Criar integração com redes sociais: Permitir o compartilhamento direto em aplicativos como WhatsApp e Instagram.
-
-
-
-
-
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
