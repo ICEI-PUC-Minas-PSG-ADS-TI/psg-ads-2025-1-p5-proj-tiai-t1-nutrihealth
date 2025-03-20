@@ -63,7 +63,7 @@
 ## História de Usuário: 
                    Como usuário do sistema, quero cadastrar tarefas relacionadas ao planejamento de refeições para organizar melhor minha alimentação.
 
-## As tarefas técnicas referente a história podem ser:
+## As tarefas técnicas referente a história:
                   Criar a interface de cadastro de tarefas: Implementar uma tela para adicionar, editar e remover tarefas de planejamento de refeições.
                   Criar a lógica de armazenamento: Implementar a persistência das tarefas no banco de dados.
                   Criar validação de dados: Garantir que todas as tarefas cadastradas contenham informações válidas.
@@ -73,7 +73,7 @@
 ## História de Usuário: 
                    Como usuário do sistema, quero visualizar meu relatório mensal para acompanhar meus hábitos alimentares e melhorar meu planejamento.
 
-## As tarefas técnicas referente a história podem ser:
+## As tarefas técnicas referente a história:
                  Criar a interface de relatório: Desenvolver a tela que exibe o relatório mensal do usuário.
                  Implementar geração de relatório: Criar a lógica para calcular e exibir métricas relevantes dos hábitos alimentares do usuário.
                  Criar integração com banco de dados: Garantir que os dados do relatório sejam armazenados e recuperados corretamente.
@@ -84,7 +84,7 @@
 ## História de Usuário: 
                  Como usuário do sistema, quero cadastrar os ingredientes disponíveis em casa para facilitar a organização da minha despensa e evitar compras desnecessárias.
                  
-## As tarefas técnicas referente a história podem ser:
+## As tarefas técnicas referente a história:
                Criar a interface de cadastro de ingredientes: Desenvolver uma tela para adicionar e visualizar os ingredientes cadastrados.
                Implementar banco de dados para ingredientes: Criar a estrutura de armazenamento e recuperação dos ingredientes cadastrados.
                Criar funcionalidade de atualização e remoção: Permitir que os usuários editem ou excluam ingredientes conforme necessário.
@@ -93,7 +93,7 @@
 ## História de Usuário: 
                   Como usuário do sistema, quero receber sugestões de receitas com base nos ingredientes que tenho disponíveis para evitar desperdícios e compras desnecessárias.
 
-## As tarefas técnicas referente a história podem ser:
+## As tarefas técnicas referente a história:
                  Criar algoritmo de sugestão de receitas: Implementar lógica que cruza os ingredientes disponíveis com receitas do banco de dados.
                  Criar a interface de sugestões de receitas: Desenvolver uma tela que exibe as sugestões ao usuário.
                  Criar integração com banco de dados: Garantir que as receitas sejam filtradas corretamente conforme os ingredientes cadastrados.
@@ -104,7 +104,7 @@
   ## História de Usuário: 
                   Como usuário do sistema, quero gerar uma lista de compras personalizada conforme as receitas escolhidas para facilitar minhas compras e garantir que tenho todos os ingredientes necessários.
                   
-## As tarefas técnicas referente a história podem ser:
+## As tarefas técnicas referente a história:
                 Criar a interface de lista de compras: Desenvolver uma tela onde o usuário pode visualizar e gerenciar sua lista de compras.
   	            Implementar a geração automática da lista: Criar a lógica para adicionar automaticamente ingredientes das receitas escolhidas.
                 Criar funcionalidade de edição: Permitir que o usuário adicione ou remova itens manualmente da lista de compras.
@@ -114,7 +114,7 @@
  ## História de Usuário: 
                  Como usuário do sistema, quero visualizar o impacto ambiental das receitas sugeridas para tomar decisões mais sustentáveis na minha alimentação.
                   
-## As tarefas técnicas referente a história podem ser:
+## As tarefas técnicas referente a história:
                 Criar a interface de impacto ambiental: Desenvolver uma seção onde o usuário pode ver métricas ambientais das receitas.
                 Implementar cálculo de impacto ambiental: Criar um algoritmo que estima a pegada ecológica dos ingredientes usados nas receitas.
                 Criar integração com banco de dados: Garantir que os dados ambientais estejam armazenados e atualizados corretamente.
@@ -124,7 +124,7 @@
  ## História de Usuário: 
                 Como usuário do sistema, quero aplicar filtros de preferências alimentares para visualizar apenas receitas que atendam às minhas restrições e preferências.
                   
-## As tarefas técnicas referente a história podem ser:
+## As tarefas técnicas referente a história:
               Criar a interface de filtros: Desenvolver um sistema onde o usuário pode selecionar preferências e restrições alimentares.
               Implementar lógica de filtragem: Criar um mecanismo que filtra receitas com base nos critérios escolhidos.
               Criar integração com banco de dados: Garantir que os filtros sejam aplicados corretamente ao buscar receitas.
@@ -134,7 +134,7 @@
  ## História de Usuário: 
                Como usuário do sistema, quero salvar receitas favoritas para acessá-las facilmente sempre que precisar.
                   
-## As tarefas técnicas referente a história podem ser:
+## As tarefas técnicas referente a história:
               Criar a funcionalidade de favoritos: Implementar um botão para marcar/desmarcar receitas como favoritas.
               Criar uma página de receitas favoritas: Desenvolver uma tela onde o usuário pode visualizar suas receitas salvas.
               Criar persistência de dados: Garantir que as receitas favoritas sejam armazenadas no banco de dados e recuperadas corretamente.
@@ -145,7 +145,7 @@
  ## História de Usuário: 
                 Como usuário do sistema, quero aplicar filtros de preferências alimentares para visualizar apenas receitas que atendam às minhas restrições e preferências.
                   
-## As tarefas técnicas referente a história podem ser:
+## As tarefas técnicas referente a história:
               Criar a interface de filtros: Desenvolver um sistema onde o usuário pode selecionar preferências e restrições alimentares.
               Implementar lógica de filtragem: Criar um mecanismo que filtra receitas com base nos critérios escolhidos.
               Criar integração com banco de dados: Garantir que os filtros sejam aplicados corretamente ao buscar receitas.
@@ -155,7 +155,7 @@
  ## História de Usuário: 
                 Como usuário do sistema, quero salvar receitas favoritas para acessá-las facilmente sempre que precisar.
                   
-## As tarefas técnicas referente a história podem ser:
+## As tarefas técnicas referente a história:
               Criar a funcionalidade de favoritos: Implementar um botão para marcar/desmarcar receitas como favoritas.
               Criar uma página de receitas favoritas: Desenvolver uma tela onde o usuário pode visualizar suas receitas salvas.
               Criar persistência de dados: Garantir que as receitas favoritas sejam armazenadas no banco de dados e recuperadas corretamente.
@@ -165,7 +165,7 @@
  ## História de Usuário: 
               Como usuário do sistema, quero compartilhar receitas com amigos e familiares para trocar e explorar novas experiências culinárias.
                   
-## As tarefas técnicas referente a história podem ser:
+## As tarefas técnicas referente a história:
               Criar funcionalidade de compartilhamento: Implementar um botão que gera um link ou permite envio direto por redes sociais.
               Criar controle de permissões: Definir regras para quem pode visualizar e acessar receitas compartilhadas.
               Criar integração com redes sociais: Permitir o compartilhamento direto em aplicativos como WhatsApp e Instagram.
