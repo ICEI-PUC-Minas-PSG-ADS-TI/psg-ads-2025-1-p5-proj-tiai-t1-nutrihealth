@@ -3,25 +3,7 @@
 
 <span style="color:red">Pré-requisitos: <a href="2-Planejamento-Projeto.md"> Planejamento do Projeto do Software (Cronograma) </a></span>
 
-Nesta parte, será apresentada a definição do problema e a solução do Nosso projeto quando se fala de usuarios. Serão utilizadas técnicas como modelagem de requisitos por meio de histórias de usuários e diagramas UML, além da identificação de critérios de desempenho, segurança e acessibilidade.  
-
 ## 3.1 Classificação dos Requisitos Funcionais x Requisitos não Funcionais 
-
-> Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-> - **[Requisitos Funcionais (RF)]**(https://pt.wikipedia.org/wiki/Requisito_funcional): correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-> - **[Requisitos Não Funcionais (RNF)]**(https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade, desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-
-> Lembre-se que cada requisito deve corresponder à uma e somente uma característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
-
-
-### a) Modifique os quadros abaixo, inserindo os Requisitos Funcionais e Não Funcionais do seu projeto. 
-
-Lembre-se de classificá-los de acordo com a prioridade: ALTA, MÉDIA ou BAIXA.
 
 ### Requisitos Funcionais
 
