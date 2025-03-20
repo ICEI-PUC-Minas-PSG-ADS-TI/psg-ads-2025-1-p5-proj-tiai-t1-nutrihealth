@@ -59,7 +59,6 @@
 
 ## Tarefas Técnicas (Tasks)
 
-Cada história do usuário é dividida em tarefas específicas para implementação, confome o exemplo abaixo:
 
 ## História de Usuário: 
                    Como usuário do sistema, quero cadastrar tarefas relacionadas ao planejamento de refeições para organizar melhor minha alimentação.
