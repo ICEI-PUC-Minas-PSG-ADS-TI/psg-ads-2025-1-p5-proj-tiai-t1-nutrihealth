@@ -43,11 +43,11 @@ Atualizado em: 18/03/2025
 
 | Responsável       | Tarefa/Requisito   | Iniciado em    | Prazo      | Status    | Terminado em |
 | :----             |    :----           |      :----:    | :----:     | :----:    | :----:       |
-| Guilherme Henrique| Contexto           | 13/02/2025     | 27/02/2025 | ✔️       | 27/02/2025    |
-| Gabriel Chaves    | Contexto           | 13/02/2025     | 27/02/2025 | ✔️       | 27/02/2025    |
-| Luan Pablo        | Contexto           | 13/02/2025     | 27/02/2025 | ✔️       | 27/02/2025    |
-| Yago Henrique     | Contexto           | 13/02/2025     | 27/02/2025 | ✔️       | 27/02/2025    |
-| Vitor Emanuel     | Contexto           | 13/02/2025     | 27/02/2025 | ✔️       | 27/02/2025    |
+| Guilherme Henrique| Introdução          | 13/02/2025     | 27/02/2025 | ✔️       | 27/02/2025    |
+| Gabriel Chaves    | Problema           | 13/02/2025     | 27/02/2025 | ✔️       | 27/02/2025    |
+| Luan Pablo        | Objetivos           | 13/02/2025     | 27/02/2025 | ✔️       | 27/02/2025    |
+| Yago Henrique     | Justificativa           | 13/02/2025     | 27/02/2025 | ✔️       | 27/02/2025    |
+| Vitor Emanuel     | Público-Alvo           | 13/02/2025     | 27/02/2025 | ✔️       | 27/02/2025    |
 
 Legenda:
 - ✔️: terminado
@@ -58,14 +58,14 @@ Legenda:
   
 ## Sprint 2
 
-Atualizado em: 18/03/2025
+Atualizado em: 20/03/2025
 
 | Responsável       | Tarefa/Requisito        | Iniciado em    | Prazo      | Status    | Terminado em |
 | :----             |    :----                |      :----:    | :----:     | :----:    | :----:       |
 | Guilherme Henrique| Planejamento de projeto | 06/03/2025     | 20/03/2025 | ✔️       | 18/03/2025    |
-| Gabriel Chaves    | Planejamento de projeto | 06/03/2025     | 20/03/2025 | ✔️       | 18/03/2025    |
-| Luan Pablo        | Especificação           | 06/03/2025     | 20/03/2025 | 📝       |               |
-| Yago Henrique     | Especificação           | 06/03/2025     | 20/03/2025 | 📝       |               |
+| Gabriel Chaves    | Planejamento e Quadro de tarefas | 06/03/2025     | 20/03/2025 | ✔️       | 18/03/2025    |
+| Luan Pablo        |  Histórias de Usuários           | 06/03/2025     | 20/03/2025 | ✔️       |  19/03/2025             |
+| Yago Henrique     | Descrição do Requisito            | 06/03/2025     | 20/03/2025 | ✔️       | 19/03/2025    |
 | Vitor Emanuel     | Especificação           | 06/03/2025     | 20/03/2025 | 📝       |               |
 
 Legenda:
