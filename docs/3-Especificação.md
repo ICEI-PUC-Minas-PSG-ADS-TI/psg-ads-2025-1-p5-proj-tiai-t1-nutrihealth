@@ -81,20 +81,16 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
-|  xxxx              | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|  yyy               | Alterar permissões                 | Permitir que possam administrar contas |
-
-
-
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
+|Eu como usuário do sistema | Quero cadastrar tarefas relacionadas ao planejamento de refeições           | Para organizar melhor minha alimentação                |
+|Eu como usuário do sistema       | Quero visualizar meu relatório mensal                | Para acompanhar meus hábitos alimentares e melhorar meu planejamento |
+|Eu como usuário do sistema       | Quero cadastrar os ingredientes disponíveis em casa           | Para facilitar a organização da minha despensa e evitar compras desnecessárias               |
+|Eu como usuário do sistema       | Quero receber sugestões de receitas com base nos ingredientes que tenho disponíveis                 | Para evitar desperdícios e compras desnecessárias|
+|Eu como usuário do sistema       | Quero gerar uma lista de compras personalizada conforme as receitas escolhidas                 | Para facilitar minhas compras e garantir que tenho todos os ingredientes necessários|
+|Eu como usuário do sistema       | Quero visualizar o impacto ambiental das receitas sugeridas                | Para tomar decisões mais sustentáveis na minha alimentação|
+|Eu como usuário do sistema       | Quero aplicar filtros de preferências alimentares                | Para visualizar apenas receitas que atendam às minhas restrições e preferências|
+|Eu como usuário do sistema       | Quero salvar receitas favoritas                 | Para acessá-las facilmente sempre que precisar|
+|Eu como usuário do sistema       | Quero planejar minhas refeições semanalmente dentro da plataforma                 | Para manter uma alimentação organizada|
+|Eu como usuário do sistema       | Quero compartilhar receitas com amigos e familiares                 | Para trocar e explorar novas experiências culinárias|
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------
