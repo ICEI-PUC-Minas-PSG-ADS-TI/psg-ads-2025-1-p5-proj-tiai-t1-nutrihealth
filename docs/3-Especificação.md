@@ -43,7 +43,7 @@
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Eu como administrador do sistema | Quero gerenciar as ações dos usuários| Para manter o sistema organizado e evitar ações indesejaveis pelos usuários|
+|Eu como administrador do sistema | Quero gerenciar as ações dos usuários| Para manter a organização do sistema e prevenir usos indevidos, como o envio de receitas em formatos incorretos ou publicação de spam|
 |Eu como usuário do sistema | Quero cadastrar tarefas relacionadas ao planejamento de refeições           | Para organizar melhor minha alimentação                |
 |Eu como usuário do sistema       | Quero visualizar meu relatório mensal                | Para acompanhar meus hábitos alimentares e melhorar meu planejamento |
 |Eu como usuário do sistema       | Quero cadastrar os ingredientes disponíveis em casa           | Para facilitar a organização da minha despensa e evitar compras desnecessárias               |
