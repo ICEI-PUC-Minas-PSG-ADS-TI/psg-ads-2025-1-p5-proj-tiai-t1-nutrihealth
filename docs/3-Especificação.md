@@ -60,6 +60,15 @@
 
 ## Tarefas Técnicas (Tasks)
 
+## História de Usuário: 
+                  Como administrador do sistema, quero gerenciar as ações dos usuários para manter a organização do sistema e prevenir usos indevidos, como o envio de receitas em formatos incorretos ou publicação de spam.
+## As tarefas técnicas referente a história:
+                  Criar painel de administração: Desenvolver uma interface onde o administrador pode visualizar e gerenciar as ações dos usuários.
+                  Implementar sistema de moderação: Criar lógica para detectar e sinalizar conteúdos inadequados, como spam ou formatos incorretos de receitas.
+                  Criar funcionalidade de bloqueio e alerta: Permitir que o administrador possa emitir advertências ou bloquear usuários que violem as regras.
+                  Criar logs de atividades: Registrar todas as ações relevantes dos usuários para auditoria e controle.
+
+
 
 ## História de Usuário: 
                    Como usuário do sistema, quero cadastrar tarefas relacionadas ao planejamento de refeições para organizar melhor minha alimentação.
