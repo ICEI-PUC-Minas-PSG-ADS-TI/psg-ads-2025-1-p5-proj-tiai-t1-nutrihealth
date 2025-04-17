@@ -4,13 +4,56 @@
 
 ## 4.1. Arquitetura da solução
 
+### Arquitetura do Sistema
 
-......  COLOQUE AQUI O SEU TEXTO E O DIAGRAMA DE ARQUITETURA .......
+O diagrama a seguir representa a arquitetura de um sistema web dividido em duas camadas principais: **Client-side (lado do cliente)** e **Servidor-side (lado do servidor)**, conectadas por meio de um **API Gateway**, responsável por intermediar as requisições entre o frontend e o backend.
 
- Inclua um diagrama da solução e descreva os módulos e as tecnologias
- que fazem parte da solução. Discorra sobre o diagrama.
+---
+
+#### 1. Client-side
+
+A camada do cliente é composta por:
+
+- **Frontend HTML**: A interface do usuário é construída em HTML, sendo responsável pela estruturação do conteúdo apresentado ao usuário final.
+- **CSS**: Utilizado para estilizar a interface, proporcionando uma experiência visual agradável e responsiva.
+- **JavaScript (JS)**: Responsável pela interatividade da aplicação, permitindo a comunicação com o backend por meio de requisições assíncronas (AJAX/fetch), manipulação do DOM, validações, entre outras funcionalidades.
+
+---
+
+#### 2. API Gateway
+
+O **API Gateway** atua como um intermediário que:
+
+- Recebe as requisições do frontend.
+- Direciona-as ao backend apropriado.
+- Retorna as respostas ao cliente.
+
+Além disso, pode aplicar políticas de segurança, controle de acesso, cache, e registro de logs, centralizando o tráfego entre as camadas.
+
+---
+
+#### 3. Servidor-side
+
+A camada do servidor é composta por:
+
+- **Backend Flask**: Aplicação desenvolvida com o microframework Flask (Python), responsável pela lógica de negócio, manipulação dos dados e respostas às requisições vindas do cliente.
+- **Database Postgres**: Banco de dados relacional PostgreSQL utilizado para armazenamento persistente das informações do sistema, como dados de usuários, ingredientes, receitas, listas de compras, entre outros.
+
+---
+
+### Fluxo de Comunicação
+
+1. O usuário interage com a interface HTML.
+2. O JavaScript envia requisições HTTP para o API Gateway.
+3. O gateway direciona as requisições para o backend Flask.
+4. O backend processa os dados, realiza consultas ou atualizações no banco de dados Postgres.
+5. O backend retorna a resposta ao gateway, que a envia de volta ao frontend.
+
+---
+
+> Essa arquitetura garante uma separação clara de responsabilidades, facilita a escalabilidade e manutenção do sistema, e proporciona uma base sólida para a adição de novas funcionalidades no futuro.
  
- **Exemplo do diagrama de Arquitetura**:
+ **Diagrama de Arquitetura**:
  
  ![Exemplo de Arquitetura](./images/arquitetura-exemplo.png)
  
