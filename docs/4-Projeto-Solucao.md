@@ -1,7 +1,5 @@
 ## 4. Projeto da Solução
 
-<span style="color:red">Pré-requisitos: <a href="03-Modelagem do Processo de Negocio.md"> Modelagem do Processo de Negocio</a></span>
-
 ## 4.1. Arquitetura da solução
 
 ### Arquitetura do Sistema
@@ -55,7 +53,7 @@ A camada do servidor é composta por:
  
  **Diagrama de Arquitetura**:
  
- ![Diagrama de Arquitetura](./images/Diagrama_Arquitetura.drawio.png)
+ ![Diagrama de Arquitetura](./images/Diagrama_Arquitetura.png)
  
 
 ### 4.2. Protótipos de telas
