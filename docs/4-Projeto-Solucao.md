@@ -58,21 +58,34 @@ A camada do servidor é composta por:
 
 ### 4.2. Protótipos de telas
 
-Visão geral da interação do usuário pelas telas do sistema e protótipo interativo das telas com as funcionalidades que fazem parte do sistema (wireframes).
-Apresente as principais interfaces da plataforma. Discuta como ela foi elaborada de forma a atender os requisitos funcionais, não funcionais e histórias de usuário abordados nas <a href="02-Especificação do Projeto.md"> Especificação do Projeto</a>.
-A partir das atividades de usuário identificadas na seção anterior, elabore o protótipo de tela de cada uma delas.
-![Exemplo de Wireframe](images/wireframe-example.png)
+A Tela Inicial serve como ponto de entrada e navegação, atendendo aos requisitos de interface intuitiva (RNF-003) e responsividade (RNF-001).
 
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface.
- 
-> **Links Úteis**:
-> - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+A Tela de Relatório cumpre o RF-002 ao mostrar consumo e desperdício mensal, atendendo à história do usuário que deseja acompanhar seus hábitos alimentares. 
+
+A Tela de Planejamento Semanal atende ao RF-001 e RF-009, permitindo a organização das refeições ao longo da semana, conforme solicitado na história de planejamento da alimentação.
+
+A Tela de Criar Receita contribui para alimentar o sistema com novas opções e possibilita o controle de receitas pelo administrador (RF-004), ligada à história do ADM. 
+
+As Telas de Receita Detalhada (ADM e comum) atendem ao RF-004, RF-006, RF-007 e RF-008, oferecendo visualização completa, impacto ambiental, filtros alimentares e opção de salvar, conforme as histórias de usuário ligadas a personalização e sustentabilidade.
+
+A Tela de Login e Cadastro possibilita o acesso seguro e individual ao sistema, base para todas as histórias de usuários. 
+
+A Lista de Compras cumpre o RF-005 ao gerar listas baseadas nas receitas, ajudando na organização das compras. 
+
+A Lista de Itens realiza o RF-003 ao permitir o cadastro de ingredientes disponíveis, essencial para sugerir receitas com base nos itens em casa (RF-004), ligando a história do usuário que quer evitar desperdícios.
+
+A Tela de Receitas Salvas facilita o acesso a receitas favoritas (RF-008). 
+
+A Tela de Perfil reúne preferências alimentares e atalhos de uso (RF-007, RF-001).
+
+Página Inicial ADM permite a moderação e gestão do conteúdo (RF-010), conforme a história do administrador que deseja manter o sistema organizado.
+
+<img width="576" alt="image" src="https://github.com/user-attachments/assets/08bff154-4039-4d77-ae3c-995b861a7c0b" />
+<img width="582" alt="image" src="https://github.com/user-attachments/assets/367b3441-e7a3-4e5c-a7e2-f47d450b59e6" />
+<img width="578" alt="image" src="https://github.com/user-attachments/assets/15cdd711-ab05-4143-8337-a203414cee84" />
+<img width="580" alt="image" src="https://github.com/user-attachments/assets/6b48e53d-d286-4a2c-a60f-96e555f4d650" />
+<img width="578" alt="image" src="https://github.com/user-attachments/assets/a03cdb84-5ccd-49c3-b1f5-1993ad366f2f" />
+<img width="575" alt="image" src="https://github.com/user-attachments/assets/9964d71d-1fc6-4450-9918-840212315781" />
 
 
 ## Diagrama de Classes
