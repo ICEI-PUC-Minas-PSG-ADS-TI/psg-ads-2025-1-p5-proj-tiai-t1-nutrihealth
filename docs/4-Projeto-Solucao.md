@@ -55,7 +55,7 @@ A camada do servidor é composta por:
  
  **Diagrama de Arquitetura**:
  
- ![Diagrama de Arquitetura](./images/Diagrama_Arquitetura.png)
+ ![Diagrama de Arquitetura](./images/Diagrama_Arquitetura.drawio.png)
  
 
 ### 4.2. Protótipos de telas
