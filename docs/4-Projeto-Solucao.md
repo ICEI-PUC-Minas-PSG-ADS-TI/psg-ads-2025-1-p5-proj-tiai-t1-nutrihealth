@@ -197,6 +197,6 @@ Apresente também uma figura explicando como as tecnologias estão relacionadas 
 | ---            | ---             |
 | SGBD           | MySQL           |
 | Front end      | HTML+CSS+JS     |
-| Back end       | Java SpringBoot |
+| Back end       | Python  |
 | Deploy         | Github Pages    |
 
