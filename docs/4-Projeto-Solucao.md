@@ -218,7 +218,6 @@ Este script deverá ser incluído em um arquivo .sql na pasta src\bd.
              ▼
 ┌──────────────────────────────┐
 │     API Flask (Backend)      │
-│  hospedada no Render/Railway │
 └────────────┬─────────────────┘
              │
              ▼
