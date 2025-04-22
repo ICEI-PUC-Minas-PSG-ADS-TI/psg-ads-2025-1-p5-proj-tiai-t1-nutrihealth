@@ -188,15 +188,34 @@ Este script deverá ser incluído em um arquivo .sql na pasta src\bd.
 
 ### 4.4. Tecnologias
 
-_Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas._
-
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
-
 
 | **Dimensão**   | **Tecnologia**  |
 | ---            | ---             |
-| SGBD           | MySQL           |
+| SGBD           | PostgreSQL           |
 | Front end      | HTML+CSS+JS     |
-| Back end       | Python  |
+| Back end       | Flask |
 | Deploy         | Github Pages    |
+
+[Usuário no Navegador]
+        |
+        v
+[Interface Web (HTML/CSS/JS) - GitHub Pages]
+        |
+        v
+[Requisição HTTP]
+        |
+        v
+[API Flask]
+        |
+        v
+[SQLAlchemy]
+        |
+        v
+[PostgreSQL (Banco de Dados)]
+        |
+        ^
+[Resposta com dados (JSON)]
+        |
+        v
+[JS renderiza os dados na interface para o usuário]
 
