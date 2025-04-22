@@ -196,26 +196,49 @@ Este script deverá ser incluído em um arquivo .sql na pasta src\bd.
 | Back end       | Flask |
 | Deploy         | Github Pages    |
 
-[Usuário no Navegador]
-        |
-        v
-[Interface Web (HTML/CSS/JS) - GitHub Pages]
-        |
-        v
-[Requisição HTTP]
-        |
-        v
-[API Flask]
-        |
-        v
-[SQLAlchemy]
-        |
-        v
-[PostgreSQL (Banco de Dados)]
-        |
-        ^
-[Resposta com dados (JSON)]
-        |
-        v
-[JS renderiza os dados na interface para o usuário]
+
+
+```text
+┌──────────────────────────────┐
+│     Usuário no Navegador     │
+└────────────┬─────────────────┘
+             │
+             ▼
+┌──────────────────────────────┐
+│ Interface Web (HTML/CSS/JS) │
+│     hospedada no GitHub     │
+│           Pages             │
+└────────────┬─────────────────┘
+             │
+             ▼
+┌──────────────────────────────┐
+│      Requisição HTTP         │
+└────────────┬─────────────────┘
+             │
+             ▼
+┌──────────────────────────────┐
+│     API Flask (Backend)      │
+│  hospedada no Render/Railway │
+└────────────┬─────────────────┘
+             │
+             ▼
+┌──────────────────────────────┐
+│     SQLAlchemy (ORM)         │
+└────────────┬─────────────────┘
+             │
+             ▼
+┌──────────────────────────────┐
+│ PostgreSQL (Banco de Dados)  │
+└────────────┬─────────────────┘
+             │
+             ▼
+┌──────────────────────────────┐
+│  Resposta com dados (JSON)   │
+└────────────┬─────────────────┘
+             │
+             ▼
+┌──────────────────────────────┐
+│ JS renderiza os dados na UI  │
+└──────────────────────────────┘
+```
 
