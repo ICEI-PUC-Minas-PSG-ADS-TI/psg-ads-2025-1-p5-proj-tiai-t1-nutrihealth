@@ -77,21 +77,22 @@ Legenda:
 
 ## Sprint 3
 
-Atualizado em: 18/03/2025
+Atualizado em: 22/04/2025
 
 | Responsável       | Tarefa/Requisito        | Iniciado em    | Prazo      | Status    | Terminado em |
 | :----             |    :----                |      :----:    | :----:     | :----:    | :----:       |
-| Guilherme Henrique|                         |                |            | ❌        |              |
-| Gabriel Chaves    |                         |                |            | ❌        |              |
-| Luan Pablo        |                         |                |            | ❌        |              |
-| Yago Henrique     |                         |                |            | ❌        |              |
-| Vitor Emanuel     |                         |                |            | ❌        |              |
+| Guilherme Henrique| Arquitetura                        |                |            | ✔️        |              |
+| Gabriel Chaves    | Wireframe                     |                |            | ✔️        |              |
+| Luan Pablo        | Wireframe                |                |            | ✔️        |              |
+| Yago Henrique     | Diagrama de classes                        |                |            | 📝        |              |
+| Vitor Emanuel     | Modelo ER                       |                |            | 📝        |              |
 
 Legenda:
 - ✔️: terminado
 - 📝: em execução
 - ⌛: atrasado
 - ❌: não iniciado
+
 
 ## Sprint 4
 
