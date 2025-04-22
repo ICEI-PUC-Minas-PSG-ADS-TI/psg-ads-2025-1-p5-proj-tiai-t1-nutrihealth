@@ -58,6 +58,8 @@ A camada do servidor é composta por:
 
 ### 4.2. Protótipos de telas
 
+https://www.figma.com/design/rVo9G7BQDmsL9HOPxW7OCM/Untitled?node-id=0-1&m=dev&t=pvtHcDxqIq3pgddB-1
+
 A Tela Inicial serve como ponto de entrada e navegação, atendendo aos requisitos de interface intuitiva (RNF-003) e responsividade (RNF-001).
 
 A Tela de Relatório cumpre o RF-002 ao mostrar consumo e desperdício mensal, atendendo à história do usuário que deseja acompanhar seus hábitos alimentares. 
