@@ -97,25 +97,20 @@ Página Inicial ADM permite a moderação e gestão do conteúdo (RF-010), confo
 
 ## Modelo ER
 
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
-
-As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER”.
-
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
-
 
 ### 4.3. Modelo de dados
 
+#### 4.3.1 Modelo ER
 
+![ModeloER](https://github.com/user-attachments/assets/3f773357-72cd-417b-9b97-a19acf99676b)
 
-
-#### 4.3.1 Esquema Relacional
+#### 4.3.2 Esquema Relacional
 
 
 ![Modelo_ER](https://github.com/user-attachments/assets/e8484d16-ad16-4de3-a9b1-f294a4155003)
 
 
-#### 4.3.2 Modelo Físico
+#### 4.3.3 Modelo Físico
 
 ```
 CREATE TABLE Ingrediente (
