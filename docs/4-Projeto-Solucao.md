@@ -120,63 +120,85 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER�
 
 #### 4.3.2 Esquema Relacional
 
-O Esquema Relacional corresponde à representação dos dados em tabelas juntamente com as restrições de integridade e chave primária.
- 
-As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Relacional”.
 
-> - [Criando um modelo relacional - Documentação da IBM](https://www.ibm.com/docs/pt-br/cognos-analytics/10.2.2?topic=designer-creating-relational-model)
-
-![Exemplo de um modelo relacional](images/modeloRelacional.png "Exemplo de Modelo Relacional.")
----
+![Modelo_ER](https://github.com/user-attachments/assets/e8484d16-ad16-4de3-a9b1-f294a4155003)
 
 
 #### 4.3.3 Modelo Físico
 
-Insira aqui o script de criação das tabelas do banco de dados.
-
-> **OBS:** Se o aluno utilizar BD NoSQL, ele derá incluir o script aqui também. 
-
-Veja um exemplo:
-
 <code>
-
- -- Criação da tabela Médico
-CREATE TABLE Medico (
-    MedCodigo INTEGER PRIMARY KEY,
-    MedNome VARCHAR(100)
+CREATE TABLE Ingrediente (
+    id_ingrediente INT PRIMARY KEY,
+    nome VARCHAR(100),
+    quantidade FLOAT,
+    unidadeDeMedida VARCHAR(50),
+    impactoAmbiental FLOAT
 );
 
-
--- Criação da tabela Paciente
-CREATE TABLE Paciente (
-    PacCodigo INTEGER PRIMARY KEY,
-    PacNome VARCHAR(100)
+CREATE TABLE Receita (
+    id_receita INT PRIMARY KEY,
+    nome VARCHAR(100),
+    descricao TEXT,
+    tempoPreparo DATETIME
 );
 
--- Criação da tabela Consulta
-CREATE TABLE Consulta (
-    ConCodigo INTEGER PRIMARY KEY,
-    MedCodigo INTEGER,
-    PacCodigo INTEGER,
-    Data DATE,
-    FOREIGN KEY (MedCodigo) REFERENCES Medico(MedCodigo),
-    FOREIGN KEY (PacCodigo) REFERENCES Paciente(PacCodigo)
+CREATE TABLE Receita_Ingrediente (
+    id_receita INT,
+    id_ingrediente INT,
+    PRIMARY KEY (id_receita, id_ingrediente),
+    FOREIGN KEY (id_receita) REFERENCES Receita(id_receita),
+    FOREIGN KEY (id_ingrediente) REFERENCES Ingrediente(id_ingrediente)
 );
 
--- Criação da tabela Medicamento
-CREATE TABLE Medicamento (
-    MdcCodigo INTEGER PRIMARY KEY,
-    MdcNome VARCHAR(100)
+CREATE TABLE ListaCompras (
+    id_lista INT PRIMARY KEY,
+    valor FLOAT
 );
 
--- Criação da tabela Prescricao
-CREATE TABLE Prescricao (
-    ConCodigo INTEGER,
-    MdcCodigo INTEGER,
-    Posologia VARCHAR(200),
-    PRIMARY KEY (ConCodigo, MdcCodigo),
-    FOREIGN KEY (ConCodigo) REFERENCES Consulta(ConCodigo),
-    FOREIGN KEY (MdcCodigo) REFERENCES Medicamento(MdcCodigo)
+CREATE TABLE ListaCompras_Ingrediente (
+    id_lista INT,
+    id_ingrediente INT,
+    PRIMARY KEY (id_lista, id_ingrediente),
+    FOREIGN KEY (id_lista) REFERENCES ListaCompras(id_lista),
+    FOREIGN KEY (id_ingrediente) REFERENCES Ingrediente(id_ingrediente)
+);
+
+CREATE TABLE Usuario (
+    usuario VARCHAR(18) PRIMARY KEY,
+    senha VARCHAR(18),
+    tipo ENUM('Cliente', 'Nutricionista') -- ou VARCHAR caso o SGBD não suporte ENUM
+);
+
+CREATE TABLE Receita_Usuario (
+    id_receita INT,
+    usuario VARCHAR(18),
+    PRIMARY KEY (id_receita, usuario),
+    FOREIGN KEY (id_receita) REFERENCES Receita(id_receita),
+    FOREIGN KEY (usuario) REFERENCES Usuario(usuario)
+);
+
+CREATE TABLE Cliente (
+    id_cliente INT PRIMARY KEY,
+    idade INT,
+    nome VARCHAR(50),
+    preferencias TEXT,
+    usuario VARCHAR(18),
+    FOREIGN KEY (usuario) REFERENCES Usuario(usuario)
+);
+
+CREATE TABLE Nutricionista (
+    id_nutri INT PRIMARY KEY,
+    nome VARCHAR(50),
+    usuario VARCHAR(18),
+    FOREIGN KEY (usuario) REFERENCES Usuario(usuario)
+);
+
+CREATE TABLE Nutricionista_Cliente (
+    id_nutri INT,
+    id_cliente INT,
+    PRIMARY KEY (id_nutri, id_cliente),
+    FOREIGN KEY (id_nutri) REFERENCES Nutricionista(id_nutri),
+    FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente)
 );
 
 </code>
