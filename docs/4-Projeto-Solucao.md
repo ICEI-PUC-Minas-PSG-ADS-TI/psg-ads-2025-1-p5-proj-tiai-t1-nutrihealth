@@ -106,16 +106,16 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER�
 
 ### 4.3. Modelo de dados
 
-#### 4.3.1 Modelo ER
 
 
-#### 4.3.2 Esquema Relacional
+
+#### 4.3.1 Esquema Relacional
 
 
 ![Modelo_ER](https://github.com/user-attachments/assets/e8484d16-ad16-4de3-a9b1-f294a4155003)
 
 
-#### 4.3.3 Modelo Físico
+#### 4.3.2 Modelo Físico
 
 ```
 CREATE TABLE Ingrediente (
