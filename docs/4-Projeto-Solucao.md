@@ -126,7 +126,7 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER�
 
 #### 4.3.3 Modelo Físico
 
-<code>
+```
 CREATE TABLE Ingrediente (
     id_ingrediente INT PRIMARY KEY,
     nome VARCHAR(100),
@@ -200,8 +200,7 @@ CREATE TABLE Nutricionista_Cliente (
     FOREIGN KEY (id_nutri) REFERENCES Nutricionista(id_nutri),
     FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente)
 );
-
-</code>
+```
 
 Este script deverá ser incluído em um arquivo .sql na pasta src\bd.
 
