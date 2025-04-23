@@ -193,9 +193,6 @@ CREATE TABLE Nutricionista_Cliente (
 );
 ```
 
-Este script deverá ser incluído em um arquivo .sql na pasta src\bd.
-
-
 
 
 ### 4.4. Tecnologias
