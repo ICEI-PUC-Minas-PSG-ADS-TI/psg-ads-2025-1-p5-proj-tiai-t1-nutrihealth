@@ -166,7 +166,7 @@ CREATE TABLE ListaCompras_Ingrediente (
 CREATE TABLE Usuario (
     usuario VARCHAR(18) PRIMARY KEY,
     senha VARCHAR(18),
-    tipo ENUM('Cliente', 'Nutricionista') -- ou VARCHAR caso o SGBD não suporte ENUM
+    tipo ENUM('Cliente', 'Nutricionista')
 );
 
 CREATE TABLE Receita_Usuario (
