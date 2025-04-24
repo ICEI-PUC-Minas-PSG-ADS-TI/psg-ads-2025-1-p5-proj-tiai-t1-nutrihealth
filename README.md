@@ -13,7 +13,7 @@ ODS Alinhados:
 ## Integrantes
 
 * Guilherme Henrique Braga e Silva
-* Yago Henrique Martins Apolinários
+* Yago Henrique Martins Apolinário
 * Luan Pablo Mendes Amaral
 * Gabriel Chaves Pinheiro
 * Vitor Emanuel Dias Xavier
