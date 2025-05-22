@@ -1,0 +1,106 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.pyc
+*.pki/
+
+# === Virtualenv ===
+env/
+venv/
+ENV/
+.venv/
+.env/
+.venv.bak/
+
+# === Flask ===
+instance/
+*.db
+*.sqlite3
+
+# === Environment variables ===
+.env
+.env.*
+!.env.example
+
+# === Docker ===
+*.pid
+*.sock
+*.pid.lock
+docker-compose.override.yml
+docker-compose*.backup.yml
+
+# Volumes & data
+pgdata/
+volumes/
+
+# === Logs and debug ===
+*.log
+*.tmp
+*.swp
+*.bak
+*.orig
+*.rej
+nohup.out
+debug.log
+
+# === OS-specific ===
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# === IDEs ===
+# VS Code
+.vscode/
+.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+
+# === Build / distribution ===
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+*.manifest
+MANIFEST
+
+# === Test / coverage ===
+htmlcov/
+.coverage
+.tox/
+.nox/
+.cache/
+.pytest_cache/
+.junit.xml
+coverage.xml
+
+# === MyPy / static analysis ===
+.mypy_cache/
+.dmypy.json
+.pyre/
+
+# === Temporary files ===
+*.tmp
+*.bak
+*.old
+*.orig
+
+# === Others ===
+*.sublime-workspace
+*.sublime-project
+*.log.*
