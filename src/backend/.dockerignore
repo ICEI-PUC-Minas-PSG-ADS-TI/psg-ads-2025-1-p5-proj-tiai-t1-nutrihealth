@@ -1,0 +1,22 @@
+# Ambientes virtuais
+venv/
+.env
+.env.*
+
+# Cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Banco de dados local
+*.db
+*.sqlite3
+
+# Logs
+*.log
+
+# Outras coisas
+.git/
+.mypy_cache/
+coverage/
