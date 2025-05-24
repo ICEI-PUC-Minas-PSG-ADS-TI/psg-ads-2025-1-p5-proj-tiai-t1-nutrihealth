@@ -1,94 +1,181 @@
-# Flask API com PostgreSQL e Docker
+# Nutrihealth API
 
-Este projeto é uma API RESTful em Flask conectada a um banco PostgreSQL, dockerizada para facilitar o desenvolvimento e a implantação.
+Este projeto é uma API RESTful desenvolvida com [Flask](https://flask.palletsprojects.com/), utilizando [Docker](https://www.docker.com/) para conteinerização e [PostgreSQL](https://www.postgresql.org/) como banco de dados relacional. Usada pelo frontend do nutrihealth para consulta dos dados no banco de dados.
 
 ---
 
-## Como rodar o projeto
+## Estrutura do Projeto
 
-### 1. Clonar o repositório
+```
+.
+├── db/
+│   ├── modelofisico.sql
+│   └── README.md
+├── src/
+|   |-- models/
+|   |   |-- user_model.py
+|   │   └── vendas_model.py
+|   |-- routes/
+|   |   |-- user_route.py
+|   │   └── vendas_route.py
+│   ├── __init__.py
+│   └── config.py
+├── .env
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+├── README.md
+└── app.py
+```
+
+---
+
+## ⚙️ Tecnologias
+
+- Python 3.13+
+- Flask
+- SQLAlchemy
+- PostgreSQL
+- Docker / Docker Compose
+- dotenv
+- psycopg2-binary
+
+---
+
+## Como Executar
+
+### Pré-requisitos
+
+- [Docker](https://www.docker.com/products/docker-desktop)
+- [Docker Compose](https://docs.docker.com/compose/)
+
+### 1. Clone o repositório
 
 ```bash
 git clone https://github.com/ICEI-PUC-Minas-PSG-ADS-TI/psg-ads-2025-1-p5-proj-tiai-t1-nutrihealth.git
 cd psg-ads-2025-1-p5-proj-tiai-t1-nutrihealth
 ```
 
-### 2. Criar arquivo .env
+### 2. Crie o arquivo `.env`
 
-Na raiz do projeto, crie um arquivo .env com as variáveis de ambiente necessárias:
-
-```bash
-DATABASE_URL=postgresql://myuser:mypass@db:5432/mydb
-FLASK_DEBUG=0
-FLASK_ENV=development
+```env
+FLASK_DEBUG=0 or 1 to active debug
+FLASK_ENV=development or production
+DATABASE_URL=postgresql://<user>:<password>@db:5432/<database>
+POSTGRES_DB=
+POSTGRES_USER=
+POSTGRES_PASSWORD=
 ```
 
-> Importante:
->
->   myuser, mypass, mydb devem ser iguais aos configurados no docker-compose.yml.
->
->   O host do banco é db (nome do serviço do PostgreSQL no Docker Compose).
+### 3. Suba os containers
 
-### 3. Subir os containers com Docker Compose
 ```bash
 docker-compose up --build
 ```
 
-Esse comando irá:
-- Construir a imagem Docker da API.
+> A API estará disponível em: http://localhost:5000
 
-- Subir o container do PostgreSQL.
+**Se não for a primeira vez rodando o projeto, siga esses passos:**
 
-- Aguardar o banco ficar disponível.
+Se **qualquer um dos arquivos abaixo for modificado**:
 
-- Aplicar automaticamente as migrations no banco.
+- `Dockerfile`
+- `docker-compose.yml`
+- `requirements.txt`
+- `.env`
+- `app.py`
 
-- Iniciar a aplicação Flask.
+Execute:
 
-**Ao fazer uma alteração nos aquivos app.py, Dockerfile, requirements.txt ou docker-compose.yml, rode o seguinte comando no terminal:**
 ```bash
 docker-compose up --build
 ```
 
-**Se quiser apenas rodar o codigo sem ter feito nenhuma alteração nesses arquivos, ou se a alteração foi apenas nos arquivos dentro de src, rode:**
+> Isso garante que todas as dependências e configurações sejam atualizadas corretamente.
+
+
+Se **apenas arquivos dentro da pasta `src/`** forem modificados, basta rodar:
+
 ```bash
 docker-compose up
 ```
 
-## Acesso à API
+> Isso é mais rápido e mantém os containers existentes.
 
-Após subir, a API estará disponível em:
+---
 
-```bash
-http://localhost:5000/
-```
-
-Exemplo de endpoint:
+## Rodar Testes
 
 ```bash
-GET http://localhost:5000/test
+docker-compose exec web pytest
 ```
 
-## Estrutura principal do projeto
+---
 
-```bash
-/
-├── app/
-│   ├── __init__.py
-│   ├── models.py
-│   ├── routes.py
-│   ├── config.py
-├── .env
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-└── app.py
+## 📬 Principais Endpoints
+
+| Método | Rota           | Descrição                  |
+|--------|----------------|----------------------------|
+| GET    | /test   | Verifica se a API está online |
+| GET    | /users         | Lista todos os usuários    |
+| POST   | /users         | Cria um novo usuário       |
+| GET    | /vendas   | Lista todas as vendas|
+| POST   | /vendas         | Cria uma nova venda       |
+| PUT    | /vendas/<id>    | Atualiza uma venda     |
+| DELETE | /users/<id>    | Remove uma venda         |
+
+---
+
+## Docker Compose
+
+```yaml
+version: "3.8"
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    environment:
+      - FLASK_ENV=${FLASK_ENV}
+      - DATABASE_URL=${DATABASE_URL}
+
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+
+volumes:
+  pgdata:
 ```
 
-## Problemas comuns
+---
 
-- Erro de conexão com o banco: \
-Verifique se o serviço db está rodando e se o DATABASE_URL está correto no .env.
+## Notas de Desenvolvimento
 
-- Porta 5000 ocupada: \
-Mude a porta no docker-compose.yml em ports: para outra disponível.
+- Variáveis sensíveis são armazenadas no `.env`
+- Código organizado com Blueprints para facilitar expansão
+
+---
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
+---
+
+## Autor
+Feito por:
+- [Guilherme](https://github.com/guilhermehbs).
+- [Yago]().
