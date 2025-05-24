@@ -9,8 +9,8 @@ Este projeto é uma API RESTful em Flask conectada a um banco PostgreSQL, docker
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
-cd seu-repo
+git clone https://github.com/ICEI-PUC-Minas-PSG-ADS-TI/psg-ads-2025-1-p5-proj-tiai-t1-nutrihealth.git
+cd psg-ads-2025-1-p5-proj-tiai-t1-nutrihealth
 ```
 
 ### 2. Criar arquivo .env
@@ -19,8 +19,8 @@ Na raiz do projeto, crie um arquivo .env com as variáveis de ambiente necessár
 
 ```bash
 DATABASE_URL=postgresql://myuser:mypass@db:5432/mydb
+FLASK_DEBUG=0
 FLASK_ENV=development
-FLASK_APP=run.py
 ```
 
 > Importante:
@@ -45,6 +45,16 @@ Esse comando irá:
 
 - Iniciar a aplicação Flask.
 
+**Ao fazer uma alteração nos aquivos app.py, Dockerfile, requirements.txt ou docker-compose.yml, rode o seguinte comando no terminal:**
+```bash
+docker-compose up --build
+```
+
+**Se quiser apenas rodar o codigo sem ter feito nenhuma alteração nesses arquivos, ou se a alteração foi apenas nos arquivos dentro de src, rode:**
+```bash
+docker-compose up
+```
+
 ## Acesso à API
 
 Após subir, a API estará disponível em:
@@ -56,27 +66,8 @@ http://localhost:5000/
 Exemplo de endpoint:
 
 ```bash
-GET http://localhost:5000/api/users
+GET http://localhost:5000/test
 ```
-
-## Desenvolvimento
-
-- O código local está mapeado para o container, ou seja, alterações feitas no seu editor são refletidas na API sem rebuild (hot reload).
-
-- Para aplicar alterações no banco de dados, gere novas migrations com:
-
-```bash
-docker-compose exec web flask db migrate -m "mensagem da migration"
-docker-compose exec web flask db upgrade
-```
-
-## Sobre as migrations
-
-- Toda vez que o container da API iniciar, ele executa flask db upgrade para garantir que o banco está atualizado.
-
-- Se não houver migrations novas, nada será alterado.
-
-- As migrations ficam na pasta migrations/.
 
 ## Estrutura principal do projeto
 
@@ -85,35 +76,13 @@ docker-compose exec web flask db upgrade
 ├── app/
 │   ├── __init__.py
 │   ├── models.py
-│   ├── routes/
-│   │   └── user_routes.py
-├── migrations/
+│   ├── routes.py
+│   ├── config.py
 ├── .env
 ├── Dockerfile
 ├── docker-compose.yml
-├── entrypoint.sh
 ├── requirements.txt
-└── run.py
-```
-
-## Dicas importantes
-
-Permissão do entrypoint.sh:
-
-- No Linux/macOS, rode localmente:
-
-```bash
-chmod +x entrypoint.sh
-```
-
-> Se estiver no Windows e não puder, o Dockerfile já configura permissão.
-
-- Atualização do código:
-Sempre que fizer pull do GitHub, rode:
-
-```bash
-docker-compose up --build
-para reconstruir a imagem com as últimas mudanças.
+└── app.py
 ```
 
 ## Problemas comuns

@@ -1,27 +1,25 @@
-version: "3.9"
+version: "3.8"
 
 services:
   web:
     build: .
-    container_name: flask_api
     ports:
       - "5000:5000"
-    env_file:
-      - .env
-    depends_on:
-      - db
     volumes:
       - .:/app
+    depends_on:
+      - db
+    environment:
+      - FLASK_ENV=${FLASK_ENV}
+      - DATABASE_URL=${DATABASE_URL}
 
   db:
     image: postgres:15
-    container_name: postgres_db
+    restart: always
     environment:
+      POSTGRES_DB: nutrihealth
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: nutrihealth
-    ports:
-      - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 
