@@ -1,6 +1,7 @@
 from .. import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from .receita_model import receitas_salvas
+from sqlalchemy import Enum
 
 class User(db.Model):
     __tablename__ = "usuarios" 
@@ -9,6 +10,8 @@ class User(db.Model):
     name = db.Column("nome_completo", db.String(80), nullable=False) 
     email = db.Column(db.String(120), unique=True, nullable=False)
     password_hash = db.Column(db.String(128), nullable=False)
+    tipo = db.Column(Enum('Cliente', 'Nutricionista', name='user_type'), nullable=False) 
+
 
     receitas_salvas = db.relationship(
         "Receita",
