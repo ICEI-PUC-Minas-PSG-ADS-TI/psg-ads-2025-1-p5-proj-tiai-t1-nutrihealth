@@ -15,11 +15,9 @@ def create_app():
 
     with app.app_context():
         from .routes.user_route import user_bp
-        from .routes.venda_route import venda_bp
         from .routes.receita_route import receita_bp
 
         app.register_blueprint(user_bp)
-        app.register_blueprint(venda_bp)
         app.register_blueprint(receita_bp)
 
         db.create_all()
