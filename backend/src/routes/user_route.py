@@ -39,7 +39,7 @@ def login_user():
     user = User.query.filter_by(email=email).first()
 
     if user and user.check_password(password):
-        access_token = create_access_token(identity=user.id, expires_delta=timedelta(hours=1))
+        access_token = create_access_token(identity=user.id, expires_delta=timedelta(hours=24))
         return jsonify(access_token=access_token), 200
     else:
         return jsonify({"error": "Email ou senha inválidos"}), 401
