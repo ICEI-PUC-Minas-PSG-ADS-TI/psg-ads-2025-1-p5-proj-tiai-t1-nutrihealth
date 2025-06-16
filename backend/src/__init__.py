@@ -11,7 +11,7 @@ def create_app():
     app.config.from_object(Config)
 
     db.init_app(app)
-    jwt.init_app(app) 
+    jwt.init_app(app)  
 
     with app.app_context():
         from .routes.user_route import user_bp
