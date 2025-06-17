@@ -14,14 +14,15 @@ def register_user():
     name = data.get("name")
     email = data.get("email")
     password = data.get("password")
+    tipo = data.get("tipo") 
 
-    if not name or not email or not password:
-        return jsonify({"error": "Nome, email e senha são obrigatórios"}), 400
+    if not name or not email or not password or not tipo: 
+        return jsonify({"error": "Nome, email, senha e tipo são obrigatórios"}), 400
 
     if User.query.filter_by(email=email).first():
         return jsonify({"error": "Este email já está cadastrado"}), 409
 
-    user = User(name=name, email=email)
+    user = User(name=name, email=email, tipo=tipo)
     user.set_password(password)
     db.session.add(user)
     db.session.commit()
@@ -39,7 +40,7 @@ def login_user():
     user = User.query.filter_by(email=email).first()
 
     if user and user.check_password(password):
-        access_token = create_access_token(identity=user.id, expires_delta=timedelta(hours=24))
+        access_token = create_access_token(identity=str(user.id), expires_delta=timedelta(hours=20))
         return jsonify(access_token=access_token), 200
     else:
         return jsonify({"error": "Email ou senha inválidos"}), 401
@@ -69,24 +70,48 @@ def get_users():
     users = User.query.all()
     return jsonify([{"id": u.id, "name": u.name, "email": u.email} for u in users])
 
-@user_bp.route("/users", methods=["POST"])
-def create_user_legacy():
+@user_bp.route("/users/<int:id>", methods=["PUT"])
+@jwt_required()
+def update_user(id):
+    current_user_id = get_jwt_identity()
+    current_user = User.query.get(current_user_id)
+
+    if not current_user:
+        return jsonify({"error": "Usuário logado não encontrado"}), 401
+
+    if current_user.id != id and current_user.tipo != 'Nutricionista':
+        return jsonify({"error": "Acesso negado: Você só pode editar seu próprio perfil, ou deve ser um Nutricionista para editar outros."}), 403
+
+    user_to_update = User.query.get(id)
+    if not user_to_update:
+        return jsonify({"error": "Usuário a ser atualizado não encontrado"}), 404
+
     data = request.get_json()
-    name = data.get("name")
-    email = data.get("email") 
-    password = data.get("password")
-    
-    if not name or not email or not password:
-        return jsonify({"error": "Nome, email e senha são obrigatórios"}), 400
 
-    if User.query.filter_by(email=email).first():
-        return jsonify({"error": "Este email já está cadastrado"}), 409
+    if "name" in data:
+        user_to_update.name = data["name"]
 
-    user = User(name=name, email=email)
-    user.set_password(password)
-    db.session.add(user)
+    if "email" in data:
+        new_email = data["email"]
+        if new_email != user_to_update.email:
+            if User.query.filter_by(email=new_email).first():
+                return jsonify({"error": "Este email já está cadastrado para outro usuário"}), 409
+            user_to_update.email = new_email
+
+    if "password" in data:
+        user_to_update.set_password(data["password"])
+
+    if "tipo" in data:
+        if current_user.tipo != 'Nutricionista':
+            return jsonify({"error": "Acesso negado: Somente nutricionistas podem alterar o tipo de usuário."}), 403
+        
+        new_tipo = data["tipo"]
+        if new_tipo not in ['Cliente', 'Nutricionista']:
+            return jsonify({"error": "Tipo de usuário inválido. Deve ser 'Cliente' ou 'Nutricionista'."}), 400
+        user_to_update.tipo = new_tipo
+
     db.session.commit()
-    return jsonify({"id": user.id, "name": user.name, "email": user.email}), 201
+    return jsonify({"message": "Usuário atualizado com sucesso"}), 200
 
 @user_bp.route("/users/<int:id>", methods=["DELETE"])
 def delete_user(id):
