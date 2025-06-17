@@ -9,7 +9,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column("nome_completo", db.String(80), nullable=False) 
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password_hash = db.Column(db.String(128), nullable=False)
+    password_hash = db.Column(db.String(256), nullable=False)
     tipo = db.Column(Enum('Cliente', 'Nutricionista', name='user_type'), nullable=False) 
 
 
