@@ -22,7 +22,7 @@ def create_recipe():
         return jsonify({"error": "Nome, descrição, tempo de preparo e ingredientes são obrigatórios"}), 400
 
     try:
-        tempo_preparo = datetime.strptime(tempo_preparo_str, "%Y-%m-%dT%H:%M:%S")
+        tempo_preparo = datetime.strptime(tempo_preparo_str, "%H:%M")
     except ValueError:
         return jsonify({"error": "Formato de tempo_preparo inválido. Use YYYY-MM-DDTHH:MM:SS"}), 400
 
@@ -51,8 +51,8 @@ def get_recipe_details(recipe_id):
         return jsonify({"error": "Receita não encontrada"}), 404
 
     ingredientes_list = [
-        {"id": ing.id, "nome": ing.nome, "quantidade": ing.quantidade, "unidade_de_medida": ing.unidade_de_medida, "impacto_ambiental": ing.impacto_ambiental} 
-        for ing in recipe.ingredientes
+        {"id": ing.id, "nome": ing.nome, "quantidade": ing.quantidade, "unidade_de_medida": ing.unidade_de_medida, "impacto_ambiental": ing.impacto_ambiental}
+        for ing in recipe.ingredientes 
     ]
 
     return jsonify({
