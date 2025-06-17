@@ -16,9 +16,11 @@ def create_app():
     with app.app_context():
         from .routes.user_route import user_bp
         from .routes.receita_route import receita_bp
+        from .routes.dashboard_route import relatorio_bp
 
         app.register_blueprint(user_bp)
         app.register_blueprint(receita_bp)
+        app.register_blueprint(relatorio_bp)
 
         db.create_all()
 
