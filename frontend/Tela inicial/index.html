@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NutriHealth - Receitas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">NutriHealth</div>
+    <a href="#" class="profile-link">Acessar perfil</a>
+    <input type="text" class="search-bar" placeholder="Buscar..." />
+  </header>
+
+  <main class="main-container">
+    <aside class="sidebar">
+      <div class="user-info">
+        <img src="perfil.png" alt="Usuário" class="user-avatar" />
+        <p>Olá, usuário</p>
+      </div>
+      <div class="filters">
+        <h3>Filtros</h3>
+        <div>
+          <strong>Tipo de dieta:</strong><br />
+          <label><input type="checkbox" name="dieta" value="vegetariana" /> Vegetariana</label><br />
+          <label><input type="checkbox" name="dieta" value="vegana" /> Vegana</label><br />
+          <label><input type="checkbox" name="dieta" value="lowcarb" /> Low carb</label><br />
+          <label><input type="checkbox" name="dieta" value="semgluten" /> Sem glúten</label><br />
+          <label><input type="checkbox" name="dieta" value="semlactose" /> Sem lactose</label>
+        </div>
+        <div>
+          <strong>Tipo de refeição:</strong><br />
+          <label><input type="checkbox" name="refeicao" value="cafe" /> Café da manhã</label><br />
+          <label><input type="checkbox" name="refeicao" value="almoco" /> Almoço</label><br />
+          <label><input type="checkbox" name="refeicao" value="jantar" /> Jantar</label><br />
+          <label><input type="checkbox" name="refeicao" value="lanches" /> Lanches</label><br />
+          <label><input type="checkbox" name="refeicao" value="sobremesas" /> Sobremesas</label>
+        </div>
+        <div>
+          <strong>Estilo de preparo:</strong><br />
+          <label><input type="checkbox" name="preparo" value="assado" /> Assado</label><br />
+          <label><input type="checkbox" name="preparo" value="cozinhado" /> Cozinhado</label><br />
+          <label><input type="checkbox" name="preparo" value="grelhado" /> Grelhado</label><br />
+          <label><input type="checkbox" name="preparo" value="cru" /> Cru</label><br />
+          <label><input type="checkbox" name="preparo" value="airfryer" /> Air fryer</label>
+        </div>
+        <button class="apply-button">Aplicar</button>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div class="planner">
+        <h2>Planejamento semanal</h2>
+        <div class="days">
+          <div class="day-slot"></div>
+          <div class="day-slot"></div>
+          <div class="day-slot"></div>
+          <div class="day-slot"></div>
+          <button class="manage-button">Gerenciar</button>
+        </div>
+        <label class="checkbox-container">
+          <input type="checkbox" /> Apenas com itens cadastrados na lista
+        </label>
+      </div>
+
+      <div class="recipes">
+        <h2>Receitas</h2>
+        <div id="recipes-list" class="recipe-grid">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

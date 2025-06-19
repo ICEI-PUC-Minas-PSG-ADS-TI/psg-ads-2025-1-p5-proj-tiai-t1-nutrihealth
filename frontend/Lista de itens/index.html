@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NutriHealth - Lista de Itens</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">NutriHealth</div>
+    <a href="#" class="back-link">Página anterior</a>
+  </header>
+
+  <main class="container">
+    <h1>Lista de itens</h1>
+
+    <div class="top-bar">
+      <input type="text" id="search" placeholder="Pesquisar item" oninput="filtrarItens()" />
+      <button class="add-button" onclick="adicionarItem()">Adicionar Item</button>
+    </div>
+
+    <div id="lista" class="lista-itens">
+    </div>
+  </main>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2 id="modal-title">Adicionar Item</h2>
+      <label>Nome do item:</label>
+      <input type="text" id="item-nome" placeholder="Digite o nome">
+
+      <label>Quantidade:</label>
+      <input type="text" id="item-quantidade" placeholder="Digite a quantidade">
+
+      <div class="modal-actions">
+        <button class="save-button" onclick="salvarItem()">Salvar</button>
+        <button class="cancel-button" onclick="fecharModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

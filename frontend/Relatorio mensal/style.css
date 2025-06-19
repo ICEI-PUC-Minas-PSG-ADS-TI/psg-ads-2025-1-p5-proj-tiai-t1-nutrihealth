@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 24px;
+}
+
+.back-button {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+main {
+  padding: 20px;
+}
+
+.relatorio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.relatorio-header h2 {
+  font-size: 22px;
+}
+
+.relatorio-header select {
+  padding: 5px 10px;
+}
+
+.cards-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1;
+  min-width: 300px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.info-grid {
+  display: flex;
+  gap: 20px;
+  margin: 15px 0;
+}
+
+.info {
+  flex: 1;
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.info p {
+  color: #666;
+  font-size: 13px;
+}
+
+.info strong {
+  color: #4CAF50;
+  font-size: 18px;
+}
+
+.refeicoes {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  color: #666;
+  font-size: 14px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+ul li span {
+  color: #4CAF50;
+}
+
+.dica {
+  background-color: #f3f3f3;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.dica h5 {
+  margin-bottom: 5px;
+}
+
+.analise {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
