@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Roboto:wght@400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body, html {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.receitas-salvas {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffffd9;
+  background-image: url("https://c.animaapp.com/YmpA7JQj/img/receitas-salvas.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.header {
+  background-color: #6bae75;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  color: #fafafa;
+}
+
+.search-bar {
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+  padding: 0.5rem 1rem;
+  width: 100%;
+  max-width: 300px;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.main-content {
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 1.5rem;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.recipe-card {
+  background-color: #fafafa;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out;
+}
+
+.recipe-card:hover {
+  transform: scale(1.02);
+}
+
+.recipe-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.recipe-info {
+  padding: 1rem;
+}
+
+.recipe-title {
+  font-size: 1rem;
+  color: #600000;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.environmental-impact {
+  font-size: 0.75rem;
+  color: #17950b;
+  font-family: "Roboto", sans-serif;
+}
+
+.pagination {
+  text-align: right;
+  margin-top: 2rem;
+}
+
+.previous-page {
+  color: #000;
+  font-size: 1rem;
+}

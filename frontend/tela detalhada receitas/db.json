@@ -1,0 +1,60 @@
+{
+  "endpoints": {
+    "GET /receitas/:id": {
+      "description": "Retorna os detalhes de uma receita específica.",
+      "response": {
+        "id": 1,
+        "titulo": "Strogonoff de frango fit",
+        "imagem": "https://c.animaapp.com/GrnS7Isi/img/rectangle-20@2x.png",
+        "ingredientes": [
+          "500g de peito de frango cortado em cubos",
+          "1 colher de chá de páprica",
+          "1 colher de chá de sal",
+          "1 colher de chá de ervas secas (como orégano ou tomilho)",
+          "1 pote de creme de ricota light",
+          "1/4 de xícara de chá de molho de tomate zero"
+        ],
+        "modo_preparo": [
+          "Tempere os cubos de frango com sal, páprica e ervas secas.",
+          "Aqueça azeite e doure os pedaços de frango.",
+          "Adicione o creme de ricota light e o molho de tomate zero. Misture bem.",
+          "Sirva com arroz integral e batata palha."
+        ]
+      }
+    },
+
+    "POST /receitas": {
+      "description": "Cadastra uma nova receita no sistema.",
+      "body": {
+        "titulo": "string",
+        "imagem": "URL",
+        "ingredientes": ["string", "..."],
+        "modo_preparo": ["string", "..."]
+      },
+      "response": {
+        "message": "Receita criada com sucesso",
+        "id": 2
+      }
+    },
+
+    "PUT /receitas/:id": {
+      "description": "Atualiza uma receita existente.",
+      "body": {
+        "titulo": "string",
+        "imagem": "URL",
+        "ingredientes": ["string", "..."],
+        "modo_preparo": ["string", "..."]
+      },
+      "response": {
+        "message": "Receita atualizada com sucesso"
+      }
+    },
+
+    "DELETE /receitas/:id": {
+      "description": "Remove uma receita do sistema.",
+      "response": {
+        "message": "Receita removida com sucesso"
+      }
+    }
+  }
+}

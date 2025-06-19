@@ -1,0 +1,72 @@
+{
+  "base_url": "https://api.nutrihealth.com/perfil",
+  "endpoints": [
+    {
+      "method": "GET",
+      "url": "/perfil",
+      "description": "Retorna os dados do perfil do usuário",
+      "response": {
+        "nome": "Gabriel",
+        "email": "gabriel@example.com",
+        "avatar": "https://c.animaapp.com/JnIFCYmb/img/2919906-1@2x.png"
+      }
+    },
+    {
+      "method": "PUT",
+      "url": "/perfil",
+      "description": "Atualiza informações do perfil",
+      "body": {
+        "nome": "Gabriel Chaves",
+        "email": "gabriel.chaves@example.com",
+        "avatar": "https://example.com/novo-avatar.png"
+      },
+      "response": {
+        "message": "Perfil atualizado com sucesso"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/receitas",
+      "description": "Lista as receitas do usuário",
+      "response": [
+        {
+          "id": 1,
+          "titulo": "Pão de queijo na frigideira",
+          "imagem": "https://c.animaapp.com/JnIFCYmb/img/rectangle-13@2x.png",
+          "impacto": "baixo"
+        },
+        {
+          "id": 2,
+          "titulo": "Pão de fubá de micro-ondas",
+          "imagem": "https://c.animaapp.com/JnIFCYmb/img/rectangle-14@2x.png",
+          "impacto": "baixo"
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "url": "/receitas",
+      "description": "Cria uma nova receita",
+      "body": {
+        "titulo": "Nova Receita",
+        "imagem": "https://link-da-imagem.png",
+        "impacto": "baixo"
+      },
+      "response": {
+        "message": "Receita criada com sucesso",
+        "id": 3
+      }
+    },
+    {
+      "method": "DELETE",
+      "url": "/receitas/{id}",
+      "description": "Remove uma receita do usuário",
+      "params": {
+        "id": 3
+      },
+      "response": {
+        "message": "Receita removida com sucesso"
+      }
+    }
+  ]
+}

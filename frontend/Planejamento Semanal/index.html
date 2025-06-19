@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planejamento Semanal - NutriHealth</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>NutriHealth</header>
+  <div class="wrapper">
+    <div class="top-bar">
+      <div class="back">Página anterior</div>
+    </div>
+    <div class="container">
+      <div class="planner" id="planner"></div>
+      <div class="sidebar">
+        <input type="text" placeholder="Pesquisar refeições">
+        <select>
+          <option>Todos</option>
+          <option>Café da manhã</option>
+          <option>Almoço</option>
+          <option>Jantar</option>
+        </select>
+        <div class="meal-item">
+          <span class="meal-name">Aveia</span>
+          <span class="meal-info">Café da manhã • 350 cal</span>
+        </div>
+        <div class="meal-item">
+          <span class="meal-name">Salada</span>
+          <span class="meal-info">Almoço • 400 cal</span>
+        </div>
+        <div class="meal-item">
+          <span class="meal-name">Frango Grelhado</span>
+          <span class="meal-info">Jantar • 550 cal</span>
+        </div>
+      </div>
+    </div>
+    <div class="summary">
+      <div>Refeições Planejadas: <span>12/21</span></div>
+      <div>Média de calorias/dia: <span>2,100</span></div>
+      <div>CO₂ Impacto: <span>Baixa</span></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
