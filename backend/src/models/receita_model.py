@@ -19,6 +19,11 @@ class Receita(db.Model):
     nome = db.Column(db.String(50), nullable=False)
     descricao = db.Column(db.String(120), nullable=False)
     tempo_preparo = db.Column(db.DateTime, nullable=False)
+    impacto_ambiental = db.Column(db.String(50), nullable=False)
+    modo_preparo = db.Column(db.String(120), nullable=False)
+    tipo_dieta = db.Column(db.String(50), nullable=False)
+    tipo_refeicao = db.Column(db.String(50), nullable=False)
+    estilo_preparo = db.Column(db.String(50), nullable=False)
     
     user_id = db.Column(db.Integer, db.ForeignKey('usuarios.id'), nullable=False)
     user = db.relationship("User", backref="receitas_criadas") 
