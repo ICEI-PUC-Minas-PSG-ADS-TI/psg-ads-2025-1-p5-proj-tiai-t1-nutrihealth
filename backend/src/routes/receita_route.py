@@ -16,8 +16,15 @@ def create_recipe():
     descricao = data.get("descricao")
     tempo_preparo_str = data.get("tempo_preparo")
     ingredientes_data = data.get("ingredientes")
-    current_user_id = get_jwt_identity()
+    impacto_ambiental = data.get("impacto_ambiental")
+    modo_preparo = data.get("modo_preparo")
+    tipo_dieta = data.get("tipo_dieta")
+    tipo_refeicao = data.get("tipo_refeicao")
+    estilo_preparo = data.get("estilo_preparo")
 
+    current_user_id = get_jwt_identity()
+    print("====="*20)
+    print(current_user_id)
     if not nome or not descricao or not tempo_preparo_str or not ingredientes_data:
         return jsonify({"error": "Nome, descrição, tempo de preparo e ingredientes são obrigatórios"}), 400
 
@@ -26,7 +33,7 @@ def create_recipe():
     except ValueError:
         return jsonify({"error": "Formato de tempo_preparo inválido. Use YYYY-MM-DDTHH:MM:SS"}), 400
 
-    new_recipe = Receita(nome=nome, descricao=descricao, tempo_preparo=tempo_preparo, user_id=current_user_id)
+    new_recipe = Receita(nome=nome, descricao=descricao, tempo_preparo=tempo_preparo, user_id=current_user_id, modo_preparo=modo_preparo, impacto_ambiental=impacto_ambiental, tipo_dieta=tipo_dieta, tipo_refeicao=tipo_refeicao,estilo_preparo=estilo_preparo)
     db.session.add(new_recipe)
     db.session.commit() 
 
@@ -60,6 +67,11 @@ def get_recipe_details(recipe_id):
         "nome": recipe.nome,
         "descricao": recipe.descricao,
         "tempo_preparo": recipe.tempo_preparo.isoformat(),
+        "modo_preparo": recipe.modo_preparo,
+        "impacto_ambiental": recipe.impacto_ambiental,
+        "tipo_dieta": recipe.tipo_dieta,
+        "tipo_refeicao": recipe.tipo_refeicao,
+        "estilo_preparo": recipe.estilo_preparo,
         "ingredientes": ingredientes_list
     }), 200
 

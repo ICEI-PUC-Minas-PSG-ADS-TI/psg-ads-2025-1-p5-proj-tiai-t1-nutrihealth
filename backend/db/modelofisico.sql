@@ -10,6 +10,11 @@ CREATE TABLE Receita (
     id_receita INT PRIMARY KEY,
     nome VARCHAR(100),
     descricao TEXT,
+    impacto_ambiental TEXT,
+    tipo_dieta TEXT,
+    tipo_refeicao TEXT,
+    estilo_preparo TEXT,
+    modo_preparo TEXT,
     tempoPreparo DATETIME
 );
 
