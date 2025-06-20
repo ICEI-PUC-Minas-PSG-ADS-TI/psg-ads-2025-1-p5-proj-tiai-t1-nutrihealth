@@ -1,11 +1,27 @@
 let receitas = [];
 
 async function carregarReceitas() {
+  const token = localStorage.getItem('token');
+
+  if (!token) {
+    alert('Você precisa estar logado para acessar as receitas!');
+    window.location.href = 'login.html';
+    return;
+  }
+
   try {
-    const response = await fetch('http://localhost:3000/api/receitas');
+    const response = await fetch('http://localhost:5000/recipes', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}` // 🔥 Envia o token aqui
+      }
+    });
+
     if (!response.ok) {
       throw new Error('Erro ao carregar as receitas');
     }
+
     const dados = await response.json();
     receitas = dados;
     renderizarReceitas(receitas);
@@ -62,7 +78,17 @@ function aplicarFiltros() {
   renderizarReceitas(filtradas);
 }
 
+function logout() {
+  localStorage.removeItem('token');
+  window.location.href = 'login.html';
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   carregarReceitas();
   document.querySelector(".apply-button").addEventListener("click", aplicarFiltros);
+
+  const botaoLogout = document.getElementById("logout");
+  if (botaoLogout) {
+    botaoLogout.addEventListener("click", logout);
+  }
 });

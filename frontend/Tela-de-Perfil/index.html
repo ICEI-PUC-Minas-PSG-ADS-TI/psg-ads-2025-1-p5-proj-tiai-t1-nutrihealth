@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NutriHealth</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div>NutriHealth</div>
+        <a href="#">Página anterior</a>
+      </div>
+
+      <div class="content">
+        <div class="user-box">
+          <img src="https://c.animaapp.com/JnIFCYmb/img/2919906-1@2x.png" alt="Avatar" />
+          <div>Olá, usuário</div>
+        </div>
+
+        <div class="grid">
+          <a href="../Planejamento-Semanal/index.html" class="card">Planejamento semanal</a>
+          <a href="../Receitas-salvas/index.html" class="card">Receitas salvas</a>
+          <a href="../Relatorio-mensal/index.html" class="card">Relatório de tarefas<br>(consumo e desperdício)</a>
+          <a href="#" class="card">Ingredientes disponíveis em casa</a>
+        </div>
+
+        <h2 style="margin-top: 40px;">Minhas receitas</h2>
+        <div id="recipes-list" class="grid">
+        </div>
+
+        <div class="grid" style="margin-top: 40px;">
+          <a href="#" class="botao criar">Criar receita</a>
+        </div>
+
+        <div class="grid" style="margin-top: 20px;">
+          <button id="logout" class="botao">Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

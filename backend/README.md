@@ -178,4 +178,7 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 ## Autor
 Feito por:
 - [Guilherme](https://github.com/guilhermehbs).
-- [Yago]().
+- [Yago](https://github.com/yago-henrique29).
+- [Luan] (https://github.com/luanpabloj)
+- [Gabriel] (https://github.com/Gachaves)
+- [Vitor] (https://github.com/vitorxav)
