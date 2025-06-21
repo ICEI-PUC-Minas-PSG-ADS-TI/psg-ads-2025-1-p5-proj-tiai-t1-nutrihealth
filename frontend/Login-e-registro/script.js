@@ -18,7 +18,7 @@ async function fazerLogin() {
     const resultado = await response.json();
     console.log('Login bem-sucedido:', resultado);
 
-    localStorage.setItem('token', resultado.token);
+    localStorage.setItem('token', resultado.access_token);
 
     alert('Login realizado com sucesso!');
 

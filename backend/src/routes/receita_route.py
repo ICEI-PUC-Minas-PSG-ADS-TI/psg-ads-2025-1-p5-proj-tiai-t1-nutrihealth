@@ -31,7 +31,7 @@ def create_recipe():
     try:
         tempo_preparo = datetime.strptime(tempo_preparo_str, "%H:%M")
     except ValueError:
-        return jsonify({"error": "Formato de tempo_preparo inválido. Use YYYY-MM-DDTHH:MM:SS"}), 400
+        return jsonify({"error": "Formato de tempo_preparo inválido. Use HH:MM"}), 400
 
     new_recipe = Receita(nome=nome, descricao=descricao, tempo_preparo=tempo_preparo, user_id=current_user_id, modo_preparo=modo_preparo, impacto_ambiental=impacto_ambiental, tipo_dieta=tipo_dieta, tipo_refeicao=tipo_refeicao,estilo_preparo=estilo_preparo)
     db.session.add(new_recipe)

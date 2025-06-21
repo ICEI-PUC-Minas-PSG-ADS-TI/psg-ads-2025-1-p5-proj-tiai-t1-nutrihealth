@@ -169,6 +169,33 @@ header {
   font-weight: 500;
 }
 
+.modal {
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.card-receita {
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin: 8px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+
 @media (max-width: 1024px) {
   .planner {
     grid-template-columns: repeat(3, 1fr);
@@ -183,3 +210,4 @@ header {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+

@@ -18,21 +18,33 @@
 
     <div class="top-bar">
       <input type="text" id="search" placeholder="Pesquisar item" oninput="filtrarItens()" />
-      <button class="add-button" onclick="adicionarItem()">Adicionar Item</button>
+      <button class="add-button" onclick="abrirModal()">Adicionar Item</button>
     </div>
 
-    <div id="lista" class="lista-itens">
-    </div>
+    <div id="lista" class="lista-itens"></div>
   </main>
 
-  <div id="modal" class="modal">
+  <!-- Modal -->
+  <div id="modal" class="modal" style="display: none;">
     <div class="modal-content">
-      <h2 id="modal-title">Adicionar Item</h2>
-      <label>Nome do item:</label>
-      <input type="text" id="item-nome" placeholder="Digite o nome">
+      <h2 id="modal-title">Adicionar Ingrediente</h2>
 
-      <label>Quantidade:</label>
-      <input type="text" id="item-quantidade" placeholder="Digite a quantidade">
+      <label for="item-nome">Nome:</label>
+      <input type="text" id="item-nome" placeholder="Ex: Tomate" />
+
+      <label for="item-quantidade">Quantidade:</label>
+      <input type="number" id="item-quantidade" placeholder="Ex: 500" />
+
+      <label for="item-unidade">Unidade de medida:</label>
+      <input type="text" id="item-unidade" placeholder="Ex: g, ml, kg" />
+
+      <label for="item-impacto">Impacto ambiental:</label>
+      <select id="item-impacto">
+        <option disabled selected>Selecione</option>
+        <option value="Baixo">Baixo</option>
+        <option value="Médio">Médio</option>
+        <option value="Alto">Alto</option>
+      </select>
 
       <div class="modal-actions">
         <button class="save-button" onclick="salvarItem()">Salvar</button>

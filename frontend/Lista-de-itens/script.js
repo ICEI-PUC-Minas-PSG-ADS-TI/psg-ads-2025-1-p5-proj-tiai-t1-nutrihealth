@@ -1,44 +1,84 @@
-const API_URL = "http://localhost:3000/itens";
+const API_URL = "http://localhost:5000/ingredientes";
 let itens = [];
 let indexEditar = null;
 let idEditar = null;
 
+function obterToken() {
+  const token = localStorage.getItem("token");
+  if (!token) {
+    alert("Sessão expirada. Faça login novamente.");
+    window.location.href = "../Login-e-registro/index.html";
+  }
+  return token;
+}
+
 async function carregarItens() {
-  const resposta = await fetch(API_URL);
+  const resposta = await fetch(API_URL, {
+    headers: {
+      "Authorization": `Bearer ${obterToken()}`
+    }
+  });
+
+  if (!resposta.ok) {
+    alert("Erro ao carregar ingredientes. Verifique sua sessão.");
+    return;
+  }
+
   itens = await resposta.json();
   renderizarLista();
 }
 
 async function salvarItem() {
   const nome = document.getElementById('item-nome').value.trim();
-  const quantidade = document.getElementById('item-quantidade').value.trim();
+  const quantidade = parseFloat(document.getElementById('item-quantidade').value.trim());
+  const unidade = document.getElementById('item-unidade').value.trim();
+  const impacto = document.getElementById('item-impacto').value;
 
-  if (!nome || !quantidade) {
+  if (!nome || isNaN(quantidade) || !unidade || impacto === "Selecione") {
     alert("Preencha todos os campos!");
     return;
   }
 
-  if (idEditar) {
-    await fetch(`${API_URL}/${idEditar}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ nome, quantidade })
-    });
-  } else {
-    await fetch(API_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ nome, quantidade })
-    });
-  }
+  const ingrediente = {
+    nome,
+    quantidade,
+    unidade_de_medida: unidade,
+    impacto_ambiental: impacto
+  };
 
-  fecharModal();
-  await carregarItens();
+  const metodo = idEditar ? "PUT" : "POST";
+  const url = idEditar ? `${API_URL}/${idEditar}` : API_URL;
+
+  try {
+    const resposta = await fetch(url, {
+      method: metodo,
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${obterToken()}`
+      },
+      body: JSON.stringify(ingrediente)
+    });
+
+    if (!resposta.ok) {
+      throw new Error("Erro ao salvar ingrediente.");
+    }
+
+    fecharModal();
+    await carregarItens();
+  } catch (error) {
+    console.error(error);
+    alert("Erro ao salvar o ingrediente.");
+  }
 }
 
 async function deletarItem(id) {
-  if (confirm("Deseja deletar este item?")) {
-    await fetch(`${API_URL}/${id}`, { method: "DELETE" });
+  if (confirm("Deseja deletar este ingrediente?")) {
+    await fetch(`${API_URL}/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Authorization": `Bearer ${obterToken()}`
+      }
+    });
     await carregarItens();
   }
 }
@@ -52,27 +92,33 @@ function abrirModal(editar = false, index = null) {
   const titulo = document.getElementById('modal-title');
   const inputNome = document.getElementById('item-nome');
   const inputQuantidade = document.getElementById('item-quantidade');
+  const inputUnidade = document.getElementById('item-unidade');
+  const selectImpacto = document.getElementById('item-impacto');
 
   modal.style.display = 'block';
 
   if (editar) {
-    titulo.textContent = "Editar Item";
-    inputNome.value = itens[index].nome;
-    inputQuantidade.value = itens[index].quantidade;
+    const item = itens[index];
+    titulo.textContent = "Editar Ingrediente";
+    inputNome.value = item.nome;
+    inputQuantidade.value = item.quantidade;
+    inputUnidade.value = item.unidade_de_medida;
+    selectImpacto.value = item.impacto_ambiental;
     indexEditar = index;
-    idEditar = itens[index].id;
+    idEditar = item.id;
   } else {
-    titulo.textContent = "Adicionar Item";
+    titulo.textContent = "Adicionar Ingrediente";
     inputNome.value = "";
     inputQuantidade.value = "";
+    inputUnidade.value = "";
+    selectImpacto.selectedIndex = 0;
     indexEditar = null;
     idEditar = null;
   }
 }
 
 function fecharModal() {
-  const modal = document.getElementById('modal');
-  modal.style.display = 'none';
+  document.getElementById('modal').style.display = 'none';
 }
 
 function renderizarLista() {
@@ -89,8 +135,8 @@ function renderizarLista() {
 
     div.innerHTML = `
       <div class="item-info">
-        <div>${item.nome}</div>
-        <div>quantidade: ${item.quantidade}</div>
+        <div><strong>${item.nome}</strong></div>
+        <div>Quantidade: ${item.quantidade} ${item.unidade_de_medida}</div>
       </div>
       <div class="buttons">
         <button class="edit-button" onclick="editarItem(${index})">Editar</button>
