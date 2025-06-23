@@ -25,20 +25,18 @@ html, body {
   flex-direction: column;
 }
 
-.header {
-  background-color: #6bae75;
-  padding: 20px;
+header {
+  background-color: #4CAF50;
   color: white;
-  font-family: 'Poppins', sans-serif;
-  box-shadow: 0 4px 4px #00000040;
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.header div {
-  font-size: 32px;
-  color: white;
+logo {
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .header a {
@@ -78,7 +76,7 @@ html, body {
   margin-top: 20px;
 }
 
-.card, .botao, .card-receita {
+.card, .card-receita {
   background-color: #fafafa;
   padding: 20px;
   border-radius: 20px;
@@ -86,6 +84,19 @@ html, body {
   text-align: center;
   cursor: pointer;
   transition: transform 0.2s;
+}
+.botao {
+  background-color: #fafafa;
+  padding: 12px 120px;    
+  border-radius: 16px;
+  box-shadow: 0 4px 4px #00000040;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  font-size: 15px;        
+  margin: 0 auto;         
+  display: block;          
+  width: fit-content;     
 }
 
 .card:hover, .botao:hover, .card-receita:hover {
