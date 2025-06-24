@@ -8,14 +8,21 @@
 </head>
 <body>
   <h1>NutriHealth</h1>
+
   <div class="container">
-    <div class="box">
+    <div class="switch-buttons">
+      <button onclick="mostrarLogin()">Login</button>
+      <button onclick="mostrarRegistro()">Registrar</button>
+    </div>
+
+    <div id="login-box" class="box active">
       <h2>Login</h2>
       <input type="email" id="login-email" placeholder="E-mail" />
       <input type="password" id="login-senha" placeholder="Senha" />
       <button onclick="fazerLogin()">Entrar</button>
     </div>
-    <div class="box">
+
+    <div id="registro-box" class="box">
       <h2>Registrar</h2>
       <input type="text" id="register-nome" placeholder="Nome" />
       <input type="email" id="register-email" placeholder="E-mail" />
