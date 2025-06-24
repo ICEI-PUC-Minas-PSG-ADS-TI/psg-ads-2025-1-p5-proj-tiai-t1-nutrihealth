@@ -75,25 +75,74 @@ function fecharModal() {
   document.getElementById("modal").style.display = "none";
 }
 
+function tipoParaEnum(tipo) {
+  switch (tipo) {
+    case "Café da manhã": return "Cafe";
+    case "Almoço": return "Almoco";
+    case "Jantar": return "Jantar";
+    default: return tipo;
+  }
+}
+
+async function carregarPlanejamento() {
+  const token = obterToken();
+  try {
+    const response = await fetch('http://localhost:5000/planejamento', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Erro ao carregar planejamento');
+    }
+
+    const planejamentos = await response.json();
+
+    planejamentos.forEach(item => {
+      const colunas = document.querySelectorAll(".day-column");
+      colunas.forEach(coluna => {
+        const titulo = coluna.querySelector("h3")?.textContent;
+        if (titulo === item.dia_semana) {
+          const blocos = coluna.querySelectorAll(".meal-block");
+          blocos.forEach(bloco => {
+            const tituloRefeicao = bloco.querySelector("h4")?.textContent;
+            if (tituloRefeicao === item.tipo_refeicao) {
+              bloco.querySelector(".drop-zone").textContent = item.receita_nome;
+            }
+          });
+        }
+      });
+    });
+
+  } catch (error) {
+    console.error('Erro ao carregar planejamento:', error);
+  }
+}
+
+
+
 async function salvarReceitaPlanejada(receita) {
   const token = obterToken();
   try {
-    await fetch('http://localhost:5000/profile/saved_recipes', {
+    await fetch('http://localhost:5000/planejamento', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
       },
       body: JSON.stringify({
-        receita_id: receita.id,
-        dia: selectedDay,
-        refeicao: selectedMeal
+        dia_semana: selectedDay,
+        tipo_refeicao: tipoParaEnum(selectedMeal),
+        receita_id: receita.id
       })
     });
   } catch (error) {
     console.error('Erro ao salvar receita planejada:', error);
   }
 }
+
 
 dias.forEach(dia => {
   const column = document.createElement("div");
@@ -127,6 +176,10 @@ dias.forEach(dia => {
 
   planner.appendChild(column);
 });
+
+
+carregarPlanejamento();
+
 
 window.onclick = function(event) {
   const modal = document.getElementById("modal");
