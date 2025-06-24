@@ -14,7 +14,7 @@ async function carregarReceitas() {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}` // 🔥 Envia o token aqui
+        'Authorization': `Bearer ${token}`
       }
     });
 
@@ -28,7 +28,7 @@ async function carregarReceitas() {
   } catch (error) {
     console.error('Erro ao buscar receitas:', error);
     const container = document.getElementById("recipes-list");
-    container.innerHTML = "<p>Erro ao carregar receitas.</p>";
+    container.innerHTML = "<p>Erro ao carregar receitas</p>";
   }
 }
 
@@ -37,7 +37,7 @@ function renderizarReceitas(lista) {
   container.innerHTML = "";
 
   if (lista.length === 0) {
-    container.innerHTML = "<p>Nenhuma receita encontrada.</p>";
+    container.innerHTML = "<p>Nenhuma receita cadastrada</p>";
     return;
   }
 
