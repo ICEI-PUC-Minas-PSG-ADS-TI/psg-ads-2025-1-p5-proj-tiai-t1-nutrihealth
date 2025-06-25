@@ -19,15 +19,15 @@ def create_app(test_config=None):
     with app.app_context():
         from .routes.user_route import user_bp
         from .routes.receita_route import receita_bp
-        from .routes.dashboard_route import relatorio_bp
         from .routes.ingrediente_route import ingrediente_bp 
         from .routes.planejamento_sema_route import planejamento_bp 
+        from .routes.dashboard_route import dashboard_bp
 
         app.register_blueprint(user_bp)
         app.register_blueprint(receita_bp)
-        app.register_blueprint(relatorio_bp)
         app.register_blueprint(ingrediente_bp)
         app.register_blueprint(planejamento_bp)
+        app.register_blueprint(dashboard_bp)
 
         db.create_all()
 
