@@ -6,12 +6,19 @@ body {
 }
 
 .header {
-  background-color: #76a77a;
+  background-color: #6bae75;
   color: white;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.logo {
+  text-decoration: none; 
+  color: inherit; 
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
 .impacto {
@@ -22,12 +29,12 @@ body {
   border-radius: 8px;
   font-weight: 500;
 }
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
+.profile-link {
+  color: white;
+  text-decoration: none;
+  margin-right: auto;
+  margin-left: 2rem;
 }
-
 .profile-link {
   color: white;
   text-decoration: none;

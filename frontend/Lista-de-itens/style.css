@@ -6,17 +6,31 @@ body {
 }
 
 .header {
-  background-color: #76a77a;
-  color: white;
-  padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background-color: #6bae75;
+  color: white;
+}
+
+.back-arrow {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.back-arrow:hover {
+  transform: translateX(-4px);
 }
 
 .logo {
-  font-size: 1.8rem;
+  font-size: 24px;
   font-weight: bold;
+  text-decoration: none;
+  color: white;
 }
 
 

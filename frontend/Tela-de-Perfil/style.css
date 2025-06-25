@@ -26,7 +26,7 @@ html, body {
 }
 
 .header {
-  background-color: #76a77a;
+  background-color: #6bae75;
   color: white;
   padding: 1rem 2rem;
   display: flex;
@@ -35,6 +35,8 @@ html, body {
 }
 
 .logo {
+  text-decoration: none; 
+  color: inherit; 
   font-size: 1.8rem;
   font-weight: bold;
 }

@@ -36,20 +36,31 @@ img {
 }
 
 .header {
-  background-color: #76a77a;
-  color: white;
-  padding: 1.5rem 2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  z-index: 10;
+  gap: 12px;
+  padding: 16px;
+  background-color: #6bae75;
+  color: white;
+}
+
+.back-arrow {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.back-arrow:hover {
+  transform: translateX(-4px);
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 24px;
   font-weight: bold;
-  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: white;
 }
 
 .main-content {
