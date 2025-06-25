@@ -13,17 +13,17 @@ body {
   padding-bottom: 2rem;
 }
 
-header {
-  background-color: #4CAF50;
+.header {
+  background-color: #76a77a;
   color: white;
-  padding: 15px 30px;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-logo {
-  font-size: 24px;
+.logo {
+  font-size: 1.8rem;
   font-weight: bold;
 }
 

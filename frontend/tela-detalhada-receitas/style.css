@@ -13,14 +13,20 @@ body {
   padding-bottom: 2rem;
 }
 
-header {
-  background-color: #4cae4f;
+.header {
+  background-color: #76a77a;
+  color: white;
   padding: 1rem 2rem;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
 
 .container {
   max-width: 1200px;

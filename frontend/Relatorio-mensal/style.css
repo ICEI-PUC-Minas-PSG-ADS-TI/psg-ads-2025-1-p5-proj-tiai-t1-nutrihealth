@@ -10,17 +10,18 @@ body {
   background-image: url('https://c.animaapp.com/GrnS7Isi/img/tela-da-receita-detalhada.png');
 }
 
-header {
-  background-color: #4CAF50;
+.header {
+  background-color: #76a77a;
   color: white;
-  padding: 20px;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header h1 {
-  font-size: 24px;
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
 .back-button {
