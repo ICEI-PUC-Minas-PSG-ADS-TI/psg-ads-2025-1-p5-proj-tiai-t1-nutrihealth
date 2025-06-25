@@ -49,7 +49,7 @@ def login_user():
 @jwt_required()
 def get_user_profile():
     current_user_id = get_jwt_identity()
-    user = User.query.get(current_user_id)
+    user = db.session.get(User, current_user_id)
     if not user:
         return jsonify({"error": "Usuário não encontrado"}), 404
     return jsonify({"id": user.id, "name": user.name, "email": user.email}), 200
@@ -58,7 +58,7 @@ def get_user_profile():
 @jwt_required()
 def get_user_created_recipes():
     current_user_id = get_jwt_identity()
-    user = User.query.get(current_user_id)
+    user = db.session.get(User, current_user_id)
     if not user:
         return jsonify({"error": "Usuário não encontrado"}), 404
     
@@ -74,7 +74,7 @@ def get_users():
 @jwt_required()
 def update_user(id):
     current_user_id = get_jwt_identity()
-    current_user = User.query.get(current_user_id)
+    current_user = db.session.get(User, current_user_id)
 
     if not current_user:
         return jsonify({"error": "Usuário logado não encontrado"}), 401
@@ -82,7 +82,7 @@ def update_user(id):
     if current_user.id != id and current_user.tipo != 'Nutricionista':
         return jsonify({"error": "Acesso negado: Você só pode editar seu próprio perfil, ou deve ser um Nutricionista para editar outros."}), 403
 
-    user_to_update = User.query.get(id)
+    user_to_update = db.session.get(User, id)
     if not user_to_update:
         return jsonify({"error": "Usuário a ser atualizado não encontrado"}), 404
 
@@ -115,7 +115,7 @@ def update_user(id):
 
 @user_bp.route("/users/<int:id>", methods=["DELETE"])
 def delete_user(id):
-    user = User.query.get(id)
+    user = db.session.get(User, id)
     if not user:
         return jsonify({"error": "Usuário não encontrado"}), 404
     

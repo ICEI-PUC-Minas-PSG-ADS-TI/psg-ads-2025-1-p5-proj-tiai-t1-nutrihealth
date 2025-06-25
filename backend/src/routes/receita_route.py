@@ -39,7 +39,7 @@ def create_recipe():
     db.session.commit() 
 
     for ing_data in ingredientes_data:
-        ingrediente = Ingrediente.query.get(ing_data["id"]) 
+        ingrediente = db.session.get(Ingrediente, ing_data["id"])
         if ingrediente:
             new_recipe.ingredientes.append(ingrediente)
     db.session.commit()
@@ -70,7 +70,7 @@ def get_all_recipes():
 
 @receita_bp.route("/recipes/<int:recipe_id>", methods=["GET"])
 def get_recipe_details(recipe_id):
-    recipe = Receita.query.get(recipe_id)
+    recipe = db.session.get(Receita, recipe_id)
     if not recipe:
         return jsonify({"error": "Receita não encontrada"}), 404
 
@@ -96,8 +96,8 @@ def get_recipe_details(recipe_id):
 @jwt_required()
 def save_recipe(recipe_id):
     current_user_id = get_jwt_identity()
-    user = User.query.get(current_user_id)
-    recipe = Receita.query.get(recipe_id)
+    user = db.session.get(User, current_user_id)
+    recipe = db.session.get(Receita, recipe_id)
 
     if not user:
         return jsonify({"error": "Usuário não encontrado"}), 404
@@ -115,7 +115,7 @@ def save_recipe(recipe_id):
 @jwt_required()
 def get_saved_recipes_for_user():
     current_user_id = get_jwt_identity()
-    user = User.query.get(current_user_id)
+    user = db.session.get(User, current_user_id)
     if not user:
         return jsonify({"error": "Usuário não encontrado"}), 404
 
@@ -125,7 +125,7 @@ def get_saved_recipes_for_user():
 
 @receita_bp.route("/recipes/<int:recipe_id>", methods=["DELETE"])
 def delete_recipe(recipe_id):
-    recipe = Receita.query.get(recipe_id)
+    recipe = db.session.get(Receita, recipe_id)
     if not recipe:
         return jsonify({"error": "Receita não encontrada"}), 404
     db.session.delete(recipe)
