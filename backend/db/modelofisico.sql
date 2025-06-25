@@ -76,3 +76,17 @@ CREATE TABLE Nutricionista_Cliente (
     FOREIGN KEY (id_nutri) REFERENCES Nutricionista(id_nutri),
     FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente)
 );
+
+CREATE TABLE Dashboard (
+    id_dashboard INT PRIMARY KEY AUTO_INCREMENT,
+    usuario_id INT,
+    mes VARCHAR(10),
+    total_refeicoes INT,
+    media_calorias_dia FLOAT,
+    alimento_mais_usado VARCHAR(100),
+    desperdicio_alimentar VARCHAR(20),
+    co2_salvo VARCHAR(20),
+    itens_mais_desperdicados TEXT,
+    dica_do_mes TEXT,
+    FOREIGN KEY (usuario_id) REFERENCES Usuario(usuario)
+);
