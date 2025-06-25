@@ -30,12 +30,12 @@ async function carregarDetalhesDaReceita() {
 
     const receita = await response.json();
 
-    document.getElementById("recipe-title").textContent = receita.titulo;
-    document.getElementById("recipe-ingredients").innerHTML = receita.ingredientes.replace(/\n/g, "<br>");
+    document.getElementById("recipe-title").textContent = receita.nome;
+    document.getElementById("recipe-impacto").textContent = `Impacto ambiental: ${receita.impacto_ambiental}`;
+    document.getElementById("recipe-ingredients").innerHTML = receita.ingredientes.map(ing => {
+      return `${ing.nome} - ${ing.quantidade} ${ing.unidade_de_medida}`;
+    }).join('<br>');
     document.getElementById("recipe-steps").innerHTML = receita.modo_preparo.replace(/\n/g, "<br><br>");
-    document.getElementById("recipe-image").src = receita.imagem;
-    document.getElementById("recipe-image").alt = receita.titulo;
-
   } catch (error) {
     console.error('Erro ao buscar receita:', error);
     document.querySelector(".container").innerHTML = "<p>Erro ao carregar a receita.</p>";

@@ -14,6 +14,15 @@ body {
   align-items: center;
 }
 
+.impacto {
+  color: #17950b;
+  font-size: 12px;
+  background-color: #eafbe7;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
 .logo {
   font-size: 1.8rem;
   font-weight: bold;

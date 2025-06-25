@@ -9,7 +9,6 @@
 <body>
   <header class="header">
     <div class="logo">NutriHealth</div>
-  
   </header>
 
   <main>
@@ -19,13 +18,15 @@
       <input type="text" id="titulo" placeholder="Digite o título"/>
     </label>
 
-    <label class="label-input">Ingredientes 
-      <textarea id="ingredientes" placeholder="Digite os ingredientes em tópicos"></textarea>
-    </label>
-
     <label class="label-input">Modo de preparo
       <textarea id="preparo" placeholder="Digite o modo de preparo em tópicos"></textarea>
     </label>
+
+    <button id="btn-novo-ingrediente" class="create" type="button">Criar novo ingrediente</button>
+
+    <div class="ingredientes-checkboxes" id="ingredientes-container">
+      <strong>Ingredientes disponíveis:</strong><br />
+    </div>
 
     <div class="side-buttons">
       <label class="file-upload">
@@ -72,11 +73,29 @@
     </div>
 
     <div class="bottom-buttons">
-      <button class="delete">Excluir</button>
-      <button class="create" onclick="criarJson()">Criar</button>
+      <button class="delete" type="button">Excluir</button>
+      <button class="create" type="button" onclick="criarJson()">Criar</button>
     </div>
   </main>
 
-<script src="script.js"></script>
+  <!-- Modal para criação de ingrediente -->
+  <div id="modal-ingrediente" class="modal">
+    <div class="modal-content">
+      <span id="close-modal" class="close">&times;</span>
+      <h2>Criar novo ingrediente</h2>
+      <input type="text" id="novo-nome" placeholder="Nome do ingrediente" />
+      <input type="number" id="novo-quantidade" placeholder="Quantidade" />
+      <input type="text" id="novo-unidade" placeholder="Unidade de medida" />
+      <select id="novo-impacto">
+        <option disabled selected>Impacto ambiental</option>
+        <option value="Baixo">Baixo</option>
+        <option value="Médio">Médio</option>
+        <option value="Alto">Alto</option>
+      </select>
+      <button id="salvar-ingrediente" class="create" type="button">Salvar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -21,19 +21,12 @@ async function carregarReceitas() {
   try {
     const response = await fetch('http://localhost:5000/recipes', {
       method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
+      headers: { 'Authorization': `Bearer ${token}` }
     });
-
-    if (!response.ok) {
-      throw new Error('Erro ao carregar as receitas');
-    }
-
+    if (!response.ok) throw new Error('Erro ao carregar as receitas');
     receitas = await response.json();
     renderizarModalReceitas();
-  } catch (error) {
-    console.error('Erro:', error);
+  } catch {
     alert('Erro ao carregar receitas.');
   }
 }
@@ -41,19 +34,14 @@ async function carregarReceitas() {
 function renderizarModalReceitas() {
   const container = document.getElementById("modal-receitas-list");
   container.innerHTML = "";
-
   if (receitas.length === 0) {
     container.innerHTML = "<p>Nenhuma receita encontrada.</p>";
     return;
   }
-
   receitas.forEach(r => {
     const card = document.createElement("div");
     card.classList.add("card-receita");
-    card.innerHTML = `
-      <h4>${r.nome}</h4>
-      <div>${r.tipo_refeicao || ''} • ${r.impacto_ambiental || ''}</div>
-    `;
+    card.innerHTML = `<h4>${r.nome}</h4><div>${r.tipo_refeicao || ''} • ${r.impacto_ambiental || ''}</div>`;
     card.onclick = () => {
       selectedBlock.querySelector(".drop-zone").textContent = r.nome;
       salvarReceitaPlanejada(r);
@@ -84,22 +72,24 @@ function tipoParaEnum(tipo) {
   }
 }
 
+function enumParaTipo(valorEnum) {
+  switch (valorEnum) {
+    case "Cafe": return "Café da manhã";
+    case "Almoco": return "Almoço";
+    case "Jantar": return "Jantar";
+    default: return valorEnum;
+  }
+}
+
 async function carregarPlanejamento() {
   const token = obterToken();
   try {
     const response = await fetch('http://localhost:5000/planejamento', {
       method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
+      headers: { 'Authorization': `Bearer ${token}` }
     });
-
-    if (!response.ok) {
-      throw new Error('Erro ao carregar planejamento');
-    }
-
+    if (!response.ok) throw new Error('Erro ao carregar planejamento');
     const planejamentos = await response.json();
-
     planejamentos.forEach(item => {
       const colunas = document.querySelectorAll(".day-column");
       colunas.forEach(coluna => {
@@ -108,20 +98,17 @@ async function carregarPlanejamento() {
           const blocos = coluna.querySelectorAll(".meal-block");
           blocos.forEach(bloco => {
             const tituloRefeicao = bloco.querySelector("h4")?.textContent;
-            if (tituloRefeicao === item.tipo_refeicao) {
+            if (tituloRefeicao === enumParaTipo(item.tipo_refeicao)) {
               bloco.querySelector(".drop-zone").textContent = item.receita_nome;
             }
           });
         }
       });
     });
-
   } catch (error) {
     console.error('Erro ao carregar planejamento:', error);
   }
 }
-
-
 
 async function salvarReceitaPlanejada(receita) {
   const token = obterToken();
@@ -143,11 +130,9 @@ async function salvarReceitaPlanejada(receita) {
   }
 }
 
-
 dias.forEach(dia => {
   const column = document.createElement("div");
   column.classList.add("day-column");
-
   const heading = document.createElement("h3");
   heading.textContent = dia;
   column.appendChild(heading);
@@ -155,7 +140,6 @@ dias.forEach(dia => {
   refeicoes.forEach(refeicao => {
     const block = document.createElement("div");
     block.classList.add("meal-block");
-
     block.onclick = () => abrirModal(dia, refeicao, block);
 
     const title = document.createElement("h4");
@@ -177,9 +161,7 @@ dias.forEach(dia => {
   planner.appendChild(column);
 });
 
-
 carregarPlanejamento();
-
 
 window.onclick = function(event) {
   const modal = document.getElementById("modal");

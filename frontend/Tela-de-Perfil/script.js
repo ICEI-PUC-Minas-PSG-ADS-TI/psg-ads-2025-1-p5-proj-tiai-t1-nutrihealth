@@ -1,5 +1,29 @@
 let receitas = [];
 
+async function carregarNomeUsuario() {
+  const token = localStorage.getItem('token');
+  if (!token) return;
+
+  try {
+    const response = await fetch('http://localhost:5000/profile', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+
+    if (!response.ok) throw new Error('Erro ao carregar perfil do usuário');
+
+    const user = await response.json();
+    const userGreeting = document.getElementById('user-greeting');
+    if (userGreeting && user.name) {
+      userGreeting.textContent = `Olá, ${user.name}`;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 async function carregarReceitas() {
   const token = localStorage.getItem('token');
 
@@ -10,11 +34,10 @@ async function carregarReceitas() {
   }
 
   try {
-    const response = await fetch('http://localhost:5000/recipes', {
+    const response = await fetch('http://localhost:5000/recipes/user', {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}` 
+        'Authorization': `Bearer ${token}`
       }
     });
 
@@ -32,6 +55,7 @@ async function carregarReceitas() {
   }
 }
 
+
 function renderizarReceitas(lista) {
   const container = document.getElementById("recipes-list");
   container.innerHTML = "";
@@ -43,23 +67,25 @@ function renderizarReceitas(lista) {
 
   lista.forEach(r => {
     const card = document.createElement("a");
-    card.href = "#";
+    card.href = `../Criar-receita/index.html?id=${r.id}`;
     card.classList.add("card-receita");
+
     card.innerHTML = `
-      <img src="${r.imagem}" alt="${r.titulo}" />
-      <h4>${r.titulo}</h4>
-      <div class="impacto">${r.impacto || "Impacto ambiental baixo"}</div>
+      <h3>${r.nome}</h3>
+      <p class="impacto">Impacto ambiental: ${r.impacto_ambiental || 'Não informado'}</p>
     `;
     container.appendChild(card);
   });
 }
 
+
 function logout() {
   localStorage.removeItem('token');
-  window.location.href = 'login.html';
+  window.location.href = '../Login-e-registro/index.html';
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  carregarNomeUsuario();
   carregarReceitas();
 
   const botaoLogout = document.getElementById("logout");

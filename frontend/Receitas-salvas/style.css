@@ -10,7 +10,7 @@
 body, html {
   height: 100%;
   font-family: "Roboto", sans-serif;
-
+  background-color: #ffffff;
 }
 
 a {
@@ -21,97 +21,102 @@ a {
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 .receitas-salvas {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #ffffffd9;
   background-image: url("https://c.animaapp.com/YmpA7JQj/img/receitas-salvas.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .header {
   background-color: #76a77a;
   color: white;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 10;
 }
 
 .logo {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: bold;
-}
-
-.search-bar {
-  background-color: #fafafa;
-  border: 1px solid #ccc;
-  border-radius: 50px;
-  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
-  padding: 0.5rem 1rem;
-  width: 100%;
-  max-width: 300px;
-  font-size: 1rem;
-  margin-top: 0.5rem;
+  font-family: "Poppins", sans-serif;
 }
 
 .main-content {
-  padding: 2rem;
+  padding: 2rem 5%;
   flex-grow: 1;
+  backdrop-filter: blur(6px);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .page-title {
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: #000;
-  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 2rem;
+  font-family: "Poppins", sans-serif;
 }
 
 .recipe-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .recipe-card {
-  background-color: #fafafa;
+  background-color: #fff;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+  cursor: pointer;
 }
 
 .recipe-card:hover {
-  transform: scale(1.02);
+  transform: translateY(-4px);
+  box-shadow: 0px 10px 18px rgba(0,0,0,0.2);
 }
 
 .recipe-image {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
+  border-bottom: 1px solid #eee;
 }
 
 .recipe-info {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .recipe-title {
-  font-size: 1rem;
-  color: #600000;
-  font-family: "Roboto", sans-serif;
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #3d3d3d;
 }
 
 .environmental-impact {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: #17950b;
-  font-family: "Roboto", sans-serif;
+  background-color: #eafbe7;
+  padding: 4px 8px;
+  border-radius: 8px;
+  width: fit-content;
+  font-weight: 500;
 }
 
 .pagination {
@@ -122,4 +127,24 @@ img {
 .previous-page {
   color: #000;
   font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .page-title {
+    font-size: 1.6rem;
+  }
 }

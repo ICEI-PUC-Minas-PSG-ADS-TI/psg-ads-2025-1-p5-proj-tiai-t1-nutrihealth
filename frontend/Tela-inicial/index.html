@@ -17,45 +17,47 @@
     <aside class="sidebar">
       <div class="user-info">
         <img src="perfil.png" alt="Usuário" class="user-avatar" />
-        <p>Olá, usuário</p>
+        <p id="user-greeting"></p>
       </div>
+
       <div class="filters">
         <h3>Filtros</h3>
+
         <div>
           <strong>Tipo de dieta:</strong><br />
-          <label><input type="checkbox" name="dieta" value="vegetariana" /> Vegetariana</label><br />
-          <label><input type="checkbox" name="dieta" value="vegana" /> Vegana</label><br />
-          <label><input type="checkbox" name="dieta" value="lowcarb" /> Low carb</label><br />
-          <label><input type="checkbox" name="dieta" value="semgluten" /> Sem glúten</label><br />
-          <label><input type="checkbox" name="dieta" value="semlactose" /> Sem lactose</label>
+          <label><input type="checkbox" name="dieta" value="Vegetariana" /> Vegetariana</label><br />
+          <label><input type="checkbox" name="dieta" value="Vegana" /> Vegana</label><br />
+          <label><input type="checkbox" name="dieta" value="Low carb" /> Low carb</label><br />
+          <label><input type="checkbox" name="dieta" value="Sem glúten" /> Sem glúten</label><br />
+          <label><input type="checkbox" name="dieta" value="Sem lactose" /> Sem lactose</label>
         </div>
+
         <div>
           <strong>Tipo de refeição:</strong><br />
-          <label><input type="checkbox" name="refeicao" value="cafe" /> Café da manhã</label><br />
-          <label><input type="checkbox" name="refeicao" value="almoco" /> Almoço</label><br />
-          <label><input type="checkbox" name="refeicao" value="jantar" /> Jantar</label><br />
-          <label><input type="checkbox" name="refeicao" value="lanches" /> Lanches</label><br />
-          <label><input type="checkbox" name="refeicao" value="sobremesas" /> Sobremesas</label>
+          <label><input type="checkbox" name="refeicao" value="Café da manhã" /> Café da manhã</label><br />
+          <label><input type="checkbox" name="refeicao" value="Almoço" /> Almoço</label><br />
+          <label><input type="checkbox" name="refeicao" value="Jantar" /> Jantar</label><br />
+          <label><input type="checkbox" name="refeicao" value="Lanches" /> Lanches</label><br />
+          <label><input type="checkbox" name="refeicao" value="Sobremesas" /> Sobremesas</label>
         </div>
+
         <div>
           <strong>Estilo de preparo:</strong><br />
-          <label><input type="checkbox" name="preparo" value="assado" /> Assado</label><br />
-          <label><input type="checkbox" name="preparo" value="cozinhado" /> Cozinhado</label><br />
-          <label><input type="checkbox" name="preparo" value="grelhado" /> Grelhado</label><br />
-          <label><input type="checkbox" name="preparo" value="cru" /> Cru</label><br />
-          <label><input type="checkbox" name="preparo" value="airfryer" /> Air fryer</label>
+          <label><input type="checkbox" name="preparo" value="Assado" /> Assado</label><br />
+          <label><input type="checkbox" name="preparo" value="Cozinhado" /> Cozinhado</label><br />
+          <label><input type="checkbox" name="preparo" value="Grelhado" /> Grelhado</label><br />
+          <label><input type="checkbox" name="preparo" value="Cru" /> Cru</label><br />
+          <label><input type="checkbox" name="preparo" value="Air fryer" /> Air fryer</label>
         </div>
+
         <button class="apply-button">Aplicar</button>
       </div>
     </aside>
 
     <section class="content">
-      
-
       <div class="recipes">
         <h2>Receitas</h2>
-        <div id="recipes-list" class="recipe-grid">
-        </div>
+        <div id="recipes-list" class="recipe-grid"></div>
       </div>
     </section>
   </main>

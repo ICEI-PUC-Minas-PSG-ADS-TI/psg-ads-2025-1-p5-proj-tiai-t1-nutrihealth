@@ -7,6 +7,7 @@ from flask_jwt_extended import jwt_required, get_jwt_identity
 from datetime import datetime
 
 receita_bp = Blueprint("receita_bp", __name__)
+#a
 
 @receita_bp.route("/recipes", methods=["POST"])
 @jwt_required()
@@ -46,10 +47,26 @@ def create_recipe():
     return jsonify({"message": "Receita criada com sucesso", "id": new_recipe.id}), 201
 
 @receita_bp.route("/recipes", methods=["GET"])
-def get_all_recipes_summary():
+def get_all_recipes():
     recipes = Receita.query.all()
-    result = [{"id": recipe.id, "nome": recipe.nome} for recipe in recipes]
+    result = [{
+        "id": recipe.id,
+        "nome": recipe.nome,
+        "descricao": recipe.descricao,
+        "tempo_preparo": recipe.tempo_preparo.isoformat() if recipe.tempo_preparo else None,
+        "modo_preparo": recipe.modo_preparo,
+        "impacto_ambiental": recipe.impacto_ambiental,
+        "tipo_dieta": recipe.tipo_dieta,
+        "tipo_refeicao": recipe.tipo_refeicao,
+        "estilo_preparo": recipe.estilo_preparo,
+        "ingredientes": [{
+            "id": ingrediente.id,
+            "nome": ingrediente.nome,
+            "quantidade": ingrediente.quantidade
+        } for ingrediente in recipe.ingredientes]
+    } for recipe in recipes]
     return jsonify(result), 200
+
 
 @receita_bp.route("/recipes/<int:recipe_id>", methods=["GET"])
 def get_recipe_details(recipe_id):
@@ -104,3 +121,42 @@ def get_saved_recipes_for_user():
 
     saved_recipes = [{"id": recipe.id, "nome": recipe.nome} for recipe in user.receitas_salvas]
     return jsonify(saved_recipes), 200
+
+
+@receita_bp.route("/recipes/<int:recipe_id>", methods=["DELETE"])
+def delete_recipe(recipe_id):
+    recipe = Receita.query.get(recipe_id)
+    if not recipe:
+        return jsonify({"error": "Receita não encontrada"}), 404
+    db.session.delete(recipe)
+    db.session.commit()
+    return jsonify({"message": "Receita excluída com sucesso"}), 200
+
+@receita_bp.route("/recipes/user", methods=["GET"])
+@jwt_required()
+def get_user_recipes():
+    current_user_id = get_jwt_identity()
+    user = User.query.get(current_user_id)
+    if not user:
+        return jsonify({"error": "Usuário não encontrado"}), 404
+
+    user_recipes = Receita.query.filter_by(user_id=current_user_id).all()
+
+    result = [{
+        "id": r.id,
+        "nome": r.nome,
+        "descricao": r.descricao,
+        "tempo_preparo": r.tempo_preparo.isoformat() if r.tempo_preparo else None,
+        "modo_preparo": r.modo_preparo,
+        "impacto_ambiental": r.impacto_ambiental,
+        "tipo_dieta": r.tipo_dieta,
+        "tipo_refeicao": r.tipo_refeicao,
+        "estilo_preparo": r.estilo_preparo,
+        "ingredientes": [{
+            "id": ing.id,
+            "nome": ing.nome,
+            "quantidade": ing.quantidade
+        } for ing in r.ingredientes]
+    } for r in user_recipes]
+
+    return jsonify(result), 200

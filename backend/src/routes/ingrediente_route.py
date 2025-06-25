@@ -9,6 +9,8 @@ ingrediente_bp = Blueprint("ingrediente_bp", __name__)
 @jwt_required()
 def create_ingrediente():
     data = request.get_json()
+    current_user_id = get_jwt_identity()
+
     nome = data.get("nome")
     quantidade = data.get("quantidade")
     unidade_de_medida = data.get("unidade_de_medida")
@@ -21,7 +23,8 @@ def create_ingrediente():
         nome=nome,
         quantidade=quantidade,
         unidade_de_medida=unidade_de_medida,
-        impacto_ambiental=impacto_ambiental
+        impacto_ambiental=impacto_ambiental,
+        user_id=current_user_id
     )
     db.session.add(new_ingrediente)
     db.session.commit()
@@ -29,8 +32,10 @@ def create_ingrediente():
     return jsonify({"message": "Ingrediente criado com sucesso", "id": new_ingrediente.id}), 201
 
 @ingrediente_bp.route("/ingredientes", methods=["GET"])
+@jwt_required()
 def get_all_ingredientes():
-    ingredientes = Ingrediente.query.all()
+    current_user_id = get_jwt_identity()
+    ingredientes = Ingrediente.query.filter_by(user_id=current_user_id).all()
     result = []
     for ing in ingredientes:
         result.append({
@@ -43,8 +48,10 @@ def get_all_ingredientes():
     return jsonify(result), 200
 
 @ingrediente_bp.route("/ingredientes/<int:ingrediente_id>", methods=["GET"])
+@jwt_required()
 def get_ingrediente_details(ingrediente_id):
-    ingrediente = Ingrediente.query.get(ingrediente_id)
+    current_user_id = get_jwt_identity()
+    ingrediente = Ingrediente.query.filter_by(id=ingrediente_id, user_id=current_user_id).first()
     if not ingrediente:
         return jsonify({"error": "Ingrediente não encontrado"}), 404
 
@@ -59,12 +66,13 @@ def get_ingrediente_details(ingrediente_id):
 @ingrediente_bp.route("/ingredientes/<int:ingrediente_id>", methods=["PUT"])
 @jwt_required()
 def update_ingrediente(ingrediente_id):
-    ingrediente = Ingrediente.query.get(ingrediente_id)
+    current_user_id = get_jwt_identity()
+    ingrediente = Ingrediente.query.filter_by(id=ingrediente_id, user_id=current_user_id).first()
     if not ingrediente:
         return jsonify({"error": "Ingrediente não encontrado"}), 404
 
     data = request.get_json()
-    
+
     if "nome" in data:
         ingrediente.nome = data["nome"]
     if "quantidade" in data:
@@ -73,14 +81,15 @@ def update_ingrediente(ingrediente_id):
         ingrediente.unidade_de_medida = data["unidade_de_medida"]
     if "impacto_ambiental" in data:
         ingrediente.impacto_ambiental = data["impacto_ambiental"]
-    
+
     db.session.commit()
     return jsonify({"message": "Ingrediente atualizado com sucesso"}), 200
 
-@ingrediente_bp.route("/ingredients/<int:ingrediente_id>", methods=["DELETE"])
+@ingrediente_bp.route("/ingredientes/<int:ingrediente_id>", methods=["DELETE"])
 @jwt_required()
 def delete_ingrediente(ingrediente_id):
-    ingrediente = Ingrediente.query.get(ingrediente_id)
+    current_user_id = get_jwt_identity()
+    ingrediente = Ingrediente.query.filter_by(id=ingrediente_id, user_id=current_user_id).first()
     if not ingrediente:
         return jsonify({"error": "Ingrediente não encontrado"}), 404
 

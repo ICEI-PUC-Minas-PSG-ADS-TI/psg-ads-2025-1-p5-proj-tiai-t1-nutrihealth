@@ -26,16 +26,26 @@ def criar_planejamento():
     except KeyError:
         return jsonify({"erro": "Dia da semana ou tipo de refeição inválido"}), 400
 
-    nova_ref = PlanejamentoSemanal(
-        dia_semana=dia_enum,
-        tipo_refeicao=refeicao_enum,
+    planejamento_existente = PlanejamentoSemanal.query.filter_by(
         user_id=current_user_id,
-        receita_id=receita_id
-    )
+        dia_semana=dia_enum,
+        tipo_refeicao=refeicao_enum
+    ).first()
 
-    db.session.add(nova_ref)
+    if planejamento_existente:
+        planejamento_existente.receita_id = receita_id
+    else:
+        planejamento_existente = PlanejamentoSemanal(
+            dia_semana=dia_enum,
+            tipo_refeicao=refeicao_enum,
+            user_id=current_user_id,
+            receita_id=receita_id
+        )
+        db.session.add(planejamento_existente)
+
     db.session.commit()
-    return jsonify({"message": "Planejamento criado com sucesso"}), 201
+    return jsonify({"message": "Planejamento criado/atualizado com sucesso"}), 201
+
 
 @planejamento_bp.route("/planejamento", methods=["GET"])
 @jwt_required()

@@ -26,7 +26,6 @@ async function carregarReceitas() {
     receitas = dados;
     renderizarReceitas(receitas);
   } catch (error) {
-    console.error('Erro ao buscar receitas:', error);
     const container = document.getElementById("recipes-list");
     container.innerHTML = "<p>Erro ao carregar receitas</p>";
   }
@@ -37,7 +36,7 @@ function renderizarReceitas(lista) {
   container.innerHTML = "";
 
   if (lista.length === 0) {
-    container.innerHTML = "<p>Nenhuma receita cadastrada</p>";
+    container.innerHTML = "<p>Nenhuma receita encontrada</p>";
     return;
   }
 
@@ -45,12 +44,16 @@ function renderizarReceitas(lista) {
     const card = document.createElement("div");
     card.classList.add("recipe-card");
     card.innerHTML = `
-      <img src="${r.imagem}" alt="${r.titulo}" class="recipe-image" />
-      <h3>${r.titulo}</h3>
+      <h3>${r.nome}</h3>
+      <p class="impacto"><strong>Impacto ambiental:</strong> ${r.impacto_ambiental}</p>
     `;
+    card.addEventListener("click", () => {
+      window.location.href = `../Tela-Receita-Detalhada/index.html?id=${r.id}`;
+    });
     container.appendChild(card);
   });
 }
+
 
 function obterFiltrosSelecionados() {
   const filtros = {
@@ -68,27 +71,52 @@ function obterFiltrosSelecionados() {
 
 function aplicarFiltros() {
   const { dieta, refeicao, preparo } = obterFiltrosSelecionados();
+  const termoBusca = document.querySelector(".search-bar").value.trim().toLowerCase();
 
   const filtradas = receitas.filter(r =>
-    (dieta.length === 0 || dieta.includes(r.dieta)) &&
-    (refeicao.length === 0 || refeicao.includes(r.refeicao)) &&
-    (preparo.length === 0 || preparo.includes(r.preparo))
+    (dieta.length === 0 || dieta.includes(r.tipo_dieta)) &&
+    (refeicao.length === 0 || refeicao.includes(r.tipo_refeicao)) &&
+    (preparo.length === 0 || preparo.includes(r.estilo_preparo)) &&
+    (termoBusca === "" || r.nome.toLowerCase().includes(termoBusca))
   );
 
   renderizarReceitas(filtradas);
 }
 
-function logout() {
-  localStorage.removeItem('token');
-  window.location.href = 'login.html';
-}
 
 document.addEventListener("DOMContentLoaded", () => {
+  carregarNomeUsuario();
   carregarReceitas();
   document.querySelector(".apply-button").addEventListener("click", aplicarFiltros);
+  document.querySelector(".search-bar").addEventListener("input", aplicarFiltros);
 
   const botaoLogout = document.getElementById("logout");
   if (botaoLogout) {
     botaoLogout.addEventListener("click", logout);
   }
 });
+
+async function carregarNomeUsuario() {
+  const token = localStorage.getItem('token');
+  if (!token) return;
+
+  try {
+    const response = await fetch('http://localhost:5000/profile', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    });
+
+    if (!response.ok) throw new Error('Erro ao carregar perfil do usuário');
+
+    const user = await response.json();
+    const userGreeting = document.getElementById('user-greeting');
+    if (userGreeting && user.name) {
+      userGreeting.textContent = `Olá, ${user.name}`;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
