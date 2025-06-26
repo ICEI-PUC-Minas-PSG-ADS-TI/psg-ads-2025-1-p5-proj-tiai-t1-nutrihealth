@@ -1,171 +1,199 @@
 # Nutrihealth API
 
-Este projeto é uma API RESTful desenvolvida com [Flask](https://flask.palletsprojects.com/), utilizando [Docker](https://www.docker.com/) para conteinerização e [PostgreSQL](https://www.postgresql.org/) como banco de dados relacional. Usada pelo frontend do nutrihealth para consulta dos dados no banco de dados.
+Este projeto é uma API RESTful desenvolvida com [Flask](https://flask.palletsprojects.com/), utilizando [PostgreSQL](https://www.postgresql.org/) como banco de dados relacional. Ela é utilizada pelo frontend do Nutrihealth para gerenciar dados como usuários, receitas, ingredientes e planejamento de refeições.
 
 ---
 
 ## Estrutura do Projeto
 
 ```
-.
-├── db/
-│   ├── modelofisico.sql
-│   └── README.md
-├── src/
-|   |-- models/
-|   |   |-- user_model.py
-|   │   └── vendas_model.py
-|   |-- routes/
-|   |   |-- user_route.py
-|   │   └── vendas_route.py
-│   ├── __init__.py
-│   └── config.py
-├── .env
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-├── README.md
-└── app.py
+nutrihealth/
+├── backend/
+│ ├── .env
+│ ├── app.py
+│ ├── config.py
+│ ├── requirements.txt
+│ ├── Dockerfile
+│ ├── docker-compose.yml
+│ ├── README.md
+│ ├── db/
+│ │ ├── modelofisico.sql
+│ │ └── README.md
+│ └── src/
+│ ├── init.py
+│ ├── config.py
+│ ├── models/
+│ │ ├── user_model.py
+│ │ └── vendas_model.py
+│ └── routes/
+│ ├── user_route.py
+│ └── vendas_route.py
+│
+├── docs/
+│ ├── apresentacao/
+│ │ ├── 1-Contexto.md
+│ │ ├── 2-Planejamento-Projeto.md
+│ │ ├── 3-Especificação.md
+│ │ ├── 4-Projeto-Solucao.md
+│ │ ├── 5-Interface-Sistema.md
+│ │ ├── 6-Conclusão.md
+│ │ └── 7-Referências.md
+│ └── images/
+│
+├── frontend/
+│ ├── Criar-receita/
+│ │ ├── index.html
+│ │ ├── script.js
+│ │ └── style.css
+│ ├── Lista-de-itens/
+│ │ ├── index.html
+│ │ ├── script.js
+│ │ └── style.css
+│ ├── Login-e-registro/
+│ │ ├── index.html
+│ │ ├── script.js
+│ │ └── style.css
+│ ├── Planejamento-Semanal/
+│ │ ├── index.html
+│ │ ├── script.js
+│ │ └── style.css
+│ ├── Receitas-salvas/
+│ │ ├── index.html
+│ │ ├── script.js
+│ │ └── style.css
+│ ├── Relatorio-mensal/
+│ │ ├── index.html
+│ │ ├── script.js
+│ │ └── style.css
+│ ├── Tela-de-Perfil/
+│ │ ├── index.html
+│ │ ├── script.js
+│ │ └── style.css
+│ ├── Tela-inicial/
+│ │ ├── index.html
+│ │ ├── perfil.png
+│ │ ├── script.js
+│ │ └── style.css
+│ └── Tela-Receita-Detalhada/
+│ ├── index.html
+│ ├── script.js
+│ └── style.css
+│
+├── venv/
+│ └── ...
+├── .gitattributes
+├── .gitignore
+├── CITATION.cff
+└── README.md
 ```
 
 ---
 
-## ⚙️ Tecnologias
+## Tecnologias
 
 - Python 3.13+
 - Flask
 - SQLAlchemy
 - PostgreSQL
-- Docker / Docker Compose
-- dotenv
 - psycopg2-binary
+- python-dotenv
+- pytest
 
 ---
 
 ## Como Executar
 
-### Pré-requisitos
+### 1. Pré-requisitos
 
-- [Docker](https://www.docker.com/products/docker-desktop)
-- [Docker Compose](https://docs.docker.com/compose/)
+- Python 3.13+
+- PostgreSQL
+- Criar um banco de dados e usuário no PostgreSQL
 
-### 1. Clone o repositório
+### 2. Clone o repositório
 
 ```bash
 git clone https://github.com/ICEI-PUC-Minas-PSG-ADS-TI/psg-ads-2025-1-p5-proj-tiai-t1-nutrihealth.git
-cd psg-ads-2025-1-p5-proj-tiai-t1-nutrihealth
+cd psg-ads-2025-1-p5-proj-tiai-t1-nutrihealth/backend
 ```
 
-### 2. Crie o arquivo `.env`
-
-```env
-FLASK_DEBUG=0 or 1 to active debug
-FLASK_ENV=development or production
-DATABASE_URL=postgresql://<user>:<password>@db:5432/<database>
-POSTGRES_DB=
-POSTGRES_USER=
-POSTGRES_PASSWORD=
-```
-
-### 3. Suba os containers
+3. Crie e ative um ambiente virtual
 
 ```bash
-docker-compose up --build
+python -m venv venv
+source venv/bin/activate  # No Windows: venv\Scripts\activate
 ```
 
-> A API estará disponível em: http://localhost:5000
-
-**Se não for a primeira vez rodando o projeto, siga esses passos:**
-
-Se **qualquer um dos arquivos abaixo for modificado**:
-
-- `Dockerfile`
-- `docker-compose.yml`
-- `requirements.txt`
-- `.env`
-- `app.py`
-
-Execute:
+4. Instale as dependências
 
 ```bash
-docker-compose up --build
+pip install -r requirements.txt
 ```
 
-> Isso garante que todas as dependências e configurações sejam atualizadas corretamente.
+5. Configure o arquivo .env
 
-
-Se **apenas arquivos dentro da pasta `src/`** forem modificados, basta rodar:
+Crie um arquivo .env na raiz do backend com:
 
 ```bash
-docker-compose up
+FLASK_DEBUG=1  
+FLASK_ENV=development  
+DATABASE_URL=postgresql://<usuario>:<senha>@<host>:<porta>/<database>
 ```
 
-> Isso é mais rápido e mantém os containers existentes.
+6. Execute o script de criação do banco de dados
 
----
-
-## Rodar Testes
+Utilize ferramentas como PgAdmin ou DBeaver para criar o banco de dados *nutrihealth_db*.
 
 ```bash
-docker-compose exec web pytest
+CREATE DATABASE IF NOT EXISTS nutrihealth_db
 ```
 
----
+7. Rode a aplicação
 
-## 📬 Principais Endpoints
+Dentro da pasta backend, rode:
 
-| Método | Rota           | Descrição                  |
-|--------|----------------|----------------------------|
-| GET    | /test   | Verifica se a API está online |
-| GET    | /users         | Lista todos os usuários    |
-| POST   | /users         | Cria um novo usuário       |
-| GET    | /vendas   | Lista todas as vendas|
-| POST   | /vendas         | Cria uma nova venda       |
-| PUT    | /vendas/<id>    | Atualiza uma venda     |
-| DELETE | /users/<id>    | Remove uma venda         |
-
----
-
-## Docker Compose
-
-```yaml
-version: "3.8"
-
-services:
-  web:
-    build: .
-    ports:
-      - "5000:5000"
-    volumes:
-      - .:/app
-    depends_on:
-      - db
-    environment:
-      - FLASK_ENV=${FLASK_ENV}
-      - DATABASE_URL=${DATABASE_URL}
-
-  db:
-    image: postgres:15
-    restart: always
-    environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    ports:
-      - "5433:5432"
-
-volumes:
-  pgdata:
+```bash
+python app.py
 ```
+
+> A API estará disponível em http://localhost:5000.
+
+## Testes
+
+Execute os testes com:
+
+```bash
+pytest
+```
+
+## Endpoints Principais
+
+| Método | Rota                          | Descrição                        |
+|--------|-------------------------------|----------------------------------|
+| POST   | /auth/register                | Registra novo usuário            |
+| POST   | /auth/login                   | Realiza login                    |
+| GET    | /profile                      | Dados do usuário logado          |
+| GET    | /users                        | Lista usuários                   |
+| PUT    | /users/<id>                   | Atualiza usuário                 |
+| DELETE | /users/<id>                   | Deleta usuário                   |
+| POST   | /ingredientes                 | Cria ingrediente                 |
+| GET    | /ingredientes                 | Lista ingredientes               |
+| POST   | /recipes                      | Cria receita                     |
+| GET    | /recipes                      | Lista receitas                   |
+| GET    | /recipes/<id>                 | Detalhes da receita              |
+| POST   | /recipes/save/<id>            | Salva receita                    |
+| GET    | /profile/saved_recipes        | Receitas salvas                  |
+| GET    | /relatorio/mensal             | Relatório mensal                 |
+| GET    | /relatorio/semanal            | Relatório semanal                |
+| POST   | /planejamento                 | Cria/atualiza planejamento       |
+| GET    | /planejamento                 | Retorna planejamento semanal     |
 
 ---
 
 ## Notas de Desenvolvimento
 
-- Variáveis sensíveis são armazenadas no `.env`
-- Código organizado com Blueprints para facilitar expansão
+- Arquitetura modular com models e routes separados
+- Variáveis sensíveis isoladas via .env
+- Organização em Blueprints para fácil manutenção
 
 ---
 
@@ -177,8 +205,8 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 
 ## Autor
 Feito por:
-- [Guilherme](https://github.com/guilhermehbs).
-- [Yago](https://github.com/yago-henrique29).
-- [Luan] (https://github.com/luanpabloj)
-- [Gabriel] (https://github.com/Gachaves)
-- [Vitor] (https://github.com/vitorxav)
+- [Guilherme](https://github.com/guilhermehbs)
+- [Yago](https://github.com/yago-henrique29)
+- [Luan](https://github.com/luanpabloj)
+- [Gabriel](https://github.com/Gachaves)
+- [Vitor](https://github.com/vitorxav)
